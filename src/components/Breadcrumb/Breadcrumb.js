@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route, Link } from 'react-router'
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap'
 import routes from '../../routes'
 

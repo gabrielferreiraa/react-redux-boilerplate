@@ -6,7 +6,8 @@ const paths = {
   root: join(__dirname, '..'),
   src: join(__dirname, '..', 'src'),
   docs: join(__dirname, '..', 'docs'),
-  dist: join(__dirname, '..', 'src', 'dist')
+  dist: join(__dirname, '..', 'src', 'dist'),
+  img: join(__dirname, '..', 'public', 'img')
 }
 
 module.exports = {
@@ -28,7 +29,7 @@ module.exports = {
   },
 
   htmlPluginConfig: {
-    title: 'API Movie DB',
+    title: 'Start Kit Redux',
     template: join(paths.src, 'template.html')
   },
 
@@ -97,7 +98,8 @@ module.exports = {
       reducers: join(paths.src, 'reducers'),
       actions: join(paths.src, 'actions'),
       stores: join(paths.src, 'stores'),
-      css: join(paths.dist, 'css')
+      css: join(paths.dist, 'css'),
+      img: join(paths.img, 'img')
     }
   }
 }
