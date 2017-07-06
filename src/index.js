@@ -6,13 +6,14 @@ import { Provider } from 'react-redux'
 
 import App from 'containers/App'
 import { configureStore } from 'stores/configureStore'
+import Routers from './routes'
 
 const store = configureStore()
 
 const renderApp = Component => {
   render(
     <Provider store={store}>
-      <Component />
+      <Routers />
     </Provider>
     , document.querySelector('[data-js="app"]'))
 }

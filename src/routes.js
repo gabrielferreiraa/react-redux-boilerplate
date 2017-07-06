@@ -1,19 +1,12 @@
-const routes = {
-  '/': 'Home',
-  '/dashboard': 'Dashboard',
-  '/components': 'Components',
-  '/charts': 'Charts',
-  '/components/buttons': 'Buttons',
-  '/components/social-buttons': 'Social Buttons',
-  '/components/cards': 'Cards',
-  '/components/forms': 'Forms',
-  '/components/modals': 'Modals',
-  '/components/switches': 'Switches',
-  '/components/tables': 'Tables',
-  '/components/tabs': 'Tabs',
-  '/icons': 'Icons',
-  '/icons/font-awesome': 'Font Awesome',
-  '/icons/simple-line-icons': 'Simple Line Icons',
-  '/widgets': 'Widgets'
-}
-export default routes
+import React from 'react'
+import { Router, Route, Redirect, hashHistory } from 'react-router'
+
+import App from 'containers/App'
+
+export default props => (
+  <Router history={hashHistory}>
+    <Route path='/' component={Dashboard} />
+    <Route path='/dashboard' component={Dashboard} />
+    <Redirect from='*' to='/' />
+  </Router>
+)
