@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "start": "yarn dev",
     "dev": "webpack-dashboard -- node server.js",
     "lint": "standard --parser babel-eslint --verbose | snazzy",
     "lint:fix": "standard --fix",
@@ -25,6 +26,7 @@
     "html-webpack-plugin": "2.26.0",
     "postcss-import": "10.0.0",
     "postcss-loader": "2.0.6",
+    "prop-types": "^15.5.10",
     "react-hot-loader": "3.0.0-beta.6",
     "react-redux": "5.0.2",
     "redux": "3.6.0",
@@ -45,6 +47,7 @@
     "babel-plugin-transform-runtime": "6.23.0",
     "babel-preset-env": "1.5.2",
     "chart.js": "2.5.0",
+    "file-loader": "^0.10.1",
     "history": "^4.6.1",
     "react": "^15.5.4",
     "react-addons-css-transition-group": "15.5.2",
@@ -56,6 +59,7 @@
     "reactstrap": "4.6.2",
     "stylus": "0.54.5",
     "stylus-loader": "3.0.1",
+    "toastr": "^2.1.2",
     "vanilla-masker": "1.1.1"
   },
   "standard": {

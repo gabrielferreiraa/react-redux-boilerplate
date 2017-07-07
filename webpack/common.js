@@ -86,6 +86,17 @@ module.exports = {
     ]
   },
 
+  fileLoader: {
+    test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|txt)(\?.*)?$/,
+    include: paths.src,
+    use: {
+      loader: 'file-loader',
+      options: {
+        name: 'media/[name].[hash:8].[ext]'
+      }
+    }
+  },
+
   resolve: {
     extensions: ['.js', '.json', '.styl', '.css'],
     alias: {

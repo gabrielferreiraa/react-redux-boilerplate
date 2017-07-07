@@ -17,13 +17,13 @@ class Sidebar extends Component {
         <nav className='sidebar-nav'>
           <ul className='nav'>
             <li className='nav-item'>
-              <Link to={'/dashboard'} className='nav-link' activeClassName='active'><i className='icon-speedometer'></i> Dashboard <span className='badge badge-info'>NEW</span></Link>
+              <Link to={'/dashboard'} className='nav-link' activeClassName='active'><i className='icon-speedometer' /> Dashboard <span className='badge badge-info'>NEW</span></Link>
             </li>
             <li className={this.activeRoute('/components')}>
               <a className='nav-link nav-dropdown-toggle' href='#' onClick={this.handleClick.bind(this)}><i className='icon-puzzle' /> Components</a>
               <ul className='nav-dropdown-items'>
                 <li className='nav-item'>
-                  <Link to={'/participants'} className='nav-link' activeClassName='active'><i className='icon-user'></i> Participantes</Link>
+                  <Link to={'/participants'} className='nav-link' activeClassName='active'><i className='icon-user' /> Participantes</Link>
                 </li>
               </ul>
             </li>

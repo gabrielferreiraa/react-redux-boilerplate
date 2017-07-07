@@ -11,6 +11,6 @@ const data = {
     { id: 4, name: 'Rodrigo', 'role': 'Gerente', 'status': 1 },
     { id: 5, name: 'José', 'role': 'CEO', 'status': 0 }
   ]
-};
+}
 
-export default data;
+export default data
