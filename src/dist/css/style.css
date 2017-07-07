@@ -7553,11 +7553,12 @@ base-chart.chart {
     padding: 0.5rem 1rem;
     margin-right: 0;
     background-color: #fff;
-    background-image: url("../img/logo.png");
+    background-image: url("http://bit.ly/2tOiNp9");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 70px auto;
-    border-bottom: 1px solid #cfd8dc; }
+    background-size: 40px auto;
+    border-bottom: 1px solid #cfd8dc; 
+    }
   .app-header.navbar .navbar-nav {
     flex-direction: row;
     align-items: center; }
@@ -8573,6 +8574,7 @@ app-root {
   overflow-x: hidden; }
   .app-body .main {
     flex: 1;
+    padding: 15px;
     min-width: 0; }
   .app-body .sidebar {
     flex: 0 0 200px;

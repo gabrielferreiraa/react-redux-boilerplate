@@ -29,7 +29,7 @@ module.exports = {
   },
 
   htmlPluginConfig: {
-    title: 'Start Kit Redux',
+    title: 'Starter Kit Redux',
     template: join(paths.src, 'template.html')
   },
 

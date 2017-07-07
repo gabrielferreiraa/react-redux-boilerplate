@@ -1,9 +1,10 @@
 'use strict'
 
 import React from 'react'
+import { Button } from 'reactstrap'
 
 const Participants = () => (
-  <h1>Participants</h1>
+    <h1>Something</h1>
 )
 
 export default Participants
