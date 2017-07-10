@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import Icon from 'utils/Icon'
 
 class Sidebar extends Component {
   handleClick (e) {
@@ -17,7 +18,12 @@ class Sidebar extends Component {
         <nav className='sidebar-nav'>
           <ul className='nav'>
             <li className='nav-item'>
-              <Link to={'/dashboard'} className='nav-link' activeClassName='active'><i className='icon-speedometer' /> Dashboard <span className='badge badge-info'>NEW</span></Link>
+              <Link to={'/dashboard'} 
+                    className='nav-link' 
+                    activeClassName='active'> 
+                    <Icon className='icon-speedometer' />
+                    Dashboard
+              </Link>
             </li>
             <li className={this.activeRoute('/components')}>
               <a className='nav-link nav-dropdown-toggle' href='#' onClick={this.handleClick.bind(this)}><i className='icon-puzzle' /> Components</a>
