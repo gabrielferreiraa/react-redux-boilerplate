@@ -6,6 +6,7 @@
     "lint:fix": "standard --fix",
     "lint:watch": "gulp",
     "build": "cross-env NODE_ENV=production webpack --progress --config webpack/prod.config -p",
+    "build:analyzer": "cross-env ANALYZER=true yarn build",
     "storybook": "start-storybook -p 9001 -c storybook",
     "build-storybook": "build-storybook -c storybook"
   },
@@ -39,6 +40,7 @@
     "standard-loader": "6.0.1",
     "style-loader": "0.13.1",
     "webpack": "2.2.1",
+    "webpack-bundle-analyzer": "^2.8.2",
     "webpack-dashboard": "0.3.0",
     "webpack-dev-server": "^2.5.0"
   },

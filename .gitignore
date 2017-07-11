@@ -3,6 +3,7 @@ nbproject
 .idea
 /node_modules
 /docs/*
+*.log
 /coverage/*
 npm-debug.log
 yarn.lock
