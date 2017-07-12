@@ -1,9 +1,4 @@
-'use strict'
-
-export const ENDPOINT = 'http://ec2-54-234-232-133.compute-1.amazonaws.com/api/v1/'
-
 /**
- * URL to request token access
- * @type {string}
+ * Const to Dev Tools (Extension Google Chrome)
  */
-export const URL_LOGIN = 'http://ec2-54-234-232-133.compute-1.amazonaws.com/api/v1/auth/admins'
+export const DEV_TOOLS = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
