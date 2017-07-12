@@ -25,6 +25,6 @@
 - Run `yarn dev` and access `http://localhost:3000`;
 - Run `yarn build` for production build;
 
-##License
+## License
 
 [MIT](https://github.com/gabrielferreiraa/licenses/blob/master/MIT#L1) &copy; Gabriel Ferreira
