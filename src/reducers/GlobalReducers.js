@@ -1,9 +1,10 @@
 'use strict'
 
 import { combineReducers } from 'redux'
+import SideBarReducer from 'reducers/SidebarReducer'
 
 const globalReducers = combineReducers({
-  app: ''
+  sidebar: SideBarReducer
 })
 
 export default globalReducers

@@ -1,6 +1,6 @@
 const Globals = {
-    nameProject: 'Starter Kit React',
-    author: '@gabrielferreiraa'
+  nameProject: 'Starter Kit React',
+  author: '@gabrielferreiraa'
 }
 
 export default Globals

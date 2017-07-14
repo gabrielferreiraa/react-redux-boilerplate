@@ -1,0 +1,30 @@
+'use strict'
+
+import React from 'react'
+import Icon from 'utils/Icon'
+import { Link } from 'react-router'
+import MenuItem from './MenuItem'
+
+const MenuTree = ({ activeRoute, handleClick, item }) => {
+  return (
+    <li className={activeRoute('/components')}>
+      <a className='nav-link nav-dropdown-toggle' href='#' onClick={handleClick}>
+        <Icon className={item.icon} />
+        {item.text}
+      </a>
+      <ul className='nav-dropdown-items'>
+        {item.children.map((item, index) => {
+          return item.parent === false
+            ? <MenuItem {...item} />
+            : <MenuTree
+              activeRoute={activeRoute}
+              handleClick={handleClick}
+              item={item}
+              />
+        })}
+      </ul>
+    </li>
+  )
+}
+
+export default MenuTree
