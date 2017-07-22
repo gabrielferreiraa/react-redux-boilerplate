@@ -2,7 +2,6 @@
 
 import React from 'react'
 import Icon from 'utils/Icon'
-import { Link } from 'react-router'
 import MenuItem from './MenuItem'
 
 const MenuTree = ({ activeRoute, handleClick, item }) => {
@@ -15,11 +14,12 @@ const MenuTree = ({ activeRoute, handleClick, item }) => {
       <ul className='nav-dropdown-items'>
         {item.children.map((item, index) => {
           return item.parent === false
-            ? <MenuItem {...item} />
+            ? <MenuItem {...item} key={index} />
             : <MenuTree
               activeRoute={activeRoute}
               handleClick={handleClick}
               item={item}
+              key={index}
               />
         })}
       </ul>

@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { menusFetched } from 'actions/SidebarActions'
+import { menusFetched, menuSearched } from 'actions/SidebarActions'
 
 import MenuItem from './MenuItem'
 import MenuTree from './MenuTree'
+
+import style from './css/Sidebar'
 
 class Sidebar extends Component {
   constructor (props) {
@@ -28,11 +30,12 @@ class Sidebar extends Component {
   renderMenus (menus) {
     return menus.map((item, index) => {
       return item.parent === false
-              ? <MenuItem {...item} />
+              ? <MenuItem {...item} key={index} />
               : <MenuTree
                 activeRoute={this.activeRoute}
                 handleClick={this.handleClick}
                 item={item}
+                key={index}
                 />
     })
   }
@@ -43,6 +46,7 @@ class Sidebar extends Component {
     return (
       <div className='sidebar'>
         <nav className='sidebar-nav'>
+          <input type='text' className={style.filterMenus} placeholder='Filtrar menus' onChange={this.props.menuSearched} />
           <ul className='nav'>
             {this.renderMenus(menus)}
           </ul>
@@ -53,6 +57,6 @@ class Sidebar extends Component {
 }
 
 const mapStateToProps = state => ({ menus: state.sidebar.menus })
-const mapDispatchToProps = dispatch => bindActionCreators({ menusFetched }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ menusFetched, menuSearched }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)
