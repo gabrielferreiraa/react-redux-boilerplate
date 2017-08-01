@@ -9,6 +9,7 @@
 * Template [CoreUI](https://github.com/mrholek/CoreUI-Free-Bootstrap-Admin-Template)
 * Webpack 2
 * Redux
+* Redux Form
 * Redux Dev Tools
 * Babel
 * React hot loader

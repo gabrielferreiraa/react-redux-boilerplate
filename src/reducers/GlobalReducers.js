@@ -1,10 +1,13 @@
 'use strict'
 
 import { combineReducers } from 'redux'
-import SideBarReducer from 'reducers/SidebarReducer'
+import { reducer as formReducer } from 'redux-form'
+
+import SidebarReducer from 'reducers/SidebarReducer'
 
 const globalReducers = combineReducers({
-  sidebar: SideBarReducer
+  sidebar: SidebarReducer,
+  form: formReducer
 })
 
 export default globalReducers
