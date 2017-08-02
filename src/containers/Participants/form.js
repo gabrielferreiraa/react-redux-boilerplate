@@ -2,10 +2,13 @@
 
 import React, { Component } from 'react'
 import { reduxForm, Field } from 'redux-form'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { edit } from 'actions/ParticipantFormActions'
 
 class ParticipantForm extends Component {
   render () {
-    const { handleSubmit } = this.props;
+    const handleSubmit = this.props.edit
 
     return (
       <form role='form' onSubmit={handleSubmit}>
@@ -24,4 +27,7 @@ class ParticipantForm extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => bindActionCreators({ edit }, dispatch)
+
+ParticipantForm = connect(null, mapDispatchToProps)(ParticipantForm)
 export default reduxForm({ form: 'participantForm' })(ParticipantForm)
