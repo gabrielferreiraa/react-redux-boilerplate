@@ -3,5 +3,8 @@
 import { EDIT } from 'constants/ParticipantFormConstants'
 
 export const edit = values => {
-  console.log('edit')
+  return {
+    type: EDIT,
+    payload: ''
+  }
 }
