@@ -4,6 +4,7 @@ const { join } = require('path')
 
 const paths = {
   root: join(__dirname, '..'),
+  modules: join(__dirname, '..', 'node_modules'),
   src: join(__dirname, '..', 'src'),
   docs: join(__dirname, '..', 'docs'),
   dist: join(__dirname, '..', 'src', 'dist'),
@@ -110,7 +111,8 @@ module.exports = {
       actions: join(paths.src, 'actions'),
       stores: join(paths.src, 'stores'),
       css: join(paths.dist, 'css'),
-      img: join(paths.img, 'img')
+      img: join(paths.img, 'img'),
+      modules: join(paths.modules, 'modules')
     }
   }
 }

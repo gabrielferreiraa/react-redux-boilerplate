@@ -5,6 +5,7 @@ import Aside from 'components/Aside'
 import Header from 'components/Header'
 import Sidebar from 'components/Sidebar'
 import Footer from 'components/Footer'
+import Messages from 'components/ReduxToastr'
 
 const App = props => (
   <div>
@@ -18,6 +19,7 @@ const App = props => (
         <Aside />
       </div>
       <Footer />
+      <Messages />
     </div>
   </div>
 )
