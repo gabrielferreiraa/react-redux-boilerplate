@@ -14,10 +14,8 @@
 * Babel
 * React hot loader
 * React Router
-* HTML and CSS generated automatically by webpack
 * Storybook
 * Jest and Chai
-* [Preact](https://preactjs.com/) for production build (optional)
 
 ## Up and running
 

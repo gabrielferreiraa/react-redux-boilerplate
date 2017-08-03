@@ -1,7 +1,7 @@
 'use strict'
 
 import React from 'react'
-import Icon from 'utils/Icon'
+import Icon from 'components/Icon'
 import MenuItem from './MenuItem'
 
 const MenuTree = ({ activeRoute, handleClick, item }) => {
