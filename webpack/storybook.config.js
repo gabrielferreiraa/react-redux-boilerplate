@@ -9,10 +9,10 @@ module.exports = function (config, env) {
   newConfig.module.preLoaders = (newConfig.module.preLoaders || []).concat({
     test: /\.js$/,
     exclude: /node_modules/,
-    loader: 'semistandard'
+    loader: 'standard'
   })
 
-  newConfig.resolve.alias = Object.assign({}, newConfig.resolve.alias, common.resolve)
+  newConfig.resolve.alias = Object.assign({}, newConfig.resolve.alias, common.resolve.alias)
 
   return newConfig
 }
