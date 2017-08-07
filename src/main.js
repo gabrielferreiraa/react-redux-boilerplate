@@ -3,10 +3,8 @@
 import React from 'react'
 import Routers from './routes'
 
-const Main = ({ Component }) => (
-  <Component>
-    <Routers />
-  </Component>
+const Main = () => (
+  <Routers />
 )
 
 export default Main

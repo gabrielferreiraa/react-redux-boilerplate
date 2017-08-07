@@ -6,7 +6,6 @@ import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader'
 import { configureStore } from 'stores/configureStore'
 
-import App from 'containers/App'
 import Main from './main'
 
 const store = configureStore()
@@ -16,18 +15,18 @@ const renderApp = Component => {
   render(
     <AppContainer>
       <Provider store={store}>
-        <Main Component={Component}/>
+        <Component />
       </Provider>
     </AppContainer>
     , rootElement)
 }
 
-renderApp(App)
+renderApp(Main)
 
 const isDev = () => process.env.NODE_ENV === 'development'
 
 if (isDev && module.hot) {
-  module.hot.accept('containers/App', () => {
-    renderApp(require('containers/App').default)
+  module.hot.accept('./main', () => {
+    renderApp(require('./main').default)
   })
 }
