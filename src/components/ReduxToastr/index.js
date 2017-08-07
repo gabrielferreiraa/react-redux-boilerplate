@@ -5,7 +5,7 @@ import ReduxToastr from 'react-redux-toastr'
 
 const Messages = props => (
   <ReduxToastr
-    timeOut={4000}
+    timeOut={6000}
     newestOnTop={false}
     preventDuplicates
     position='top-right'

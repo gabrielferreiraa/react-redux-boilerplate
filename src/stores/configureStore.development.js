@@ -6,5 +6,9 @@ import multi from 'redux-multi'
 import thunk from 'redux-thunk'
 
 export function configureStore () {
-  return applyMiddleware(thunk, multi, promise)(createStore)(globalReducers, DEV_TOOLS)
+  const middlewares = [
+    thunk, multi, promise
+  ]
+
+  return applyMiddleware(...middlewares)(createStore)(globalReducers, DEV_TOOLS)
 }
