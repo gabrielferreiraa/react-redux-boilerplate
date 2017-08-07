@@ -9,7 +9,9 @@ import thunk from 'redux-thunk'
 
 export function configureStore () {
   const middlewares = [
-    thunk, multi, promise
+    thunk,
+    multi,
+    promise
   ]
 
   const store = applyMiddleware(...middlewares)(createStore)(globalReducers, DEV_TOOLS)

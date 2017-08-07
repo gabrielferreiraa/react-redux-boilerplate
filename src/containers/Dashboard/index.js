@@ -3,7 +3,7 @@
 import React from 'react'
 
 const Dashboard = () => (
-  <h1>Hot Loader</h1>
+  <h1>Hot</h1>
 )
 
 export default Dashboard

@@ -3,19 +3,23 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
+import { AppContainer } from 'react-hot-loader'
+import { configureStore } from 'stores/configureStore'
 
 import App from 'containers/App'
-import { configureStore } from 'stores/configureStore'
-import Routers from './routes'
+import Main from './main'
 
 const store = configureStore()
+const rootElement = document.querySelector('[data-js="app"]')
 
 const renderApp = Component => {
   render(
-    <Provider store={store}>
-      <Routers />
-    </Provider>
-    , document.querySelector('[data-js="app"]'))
+    <AppContainer>
+      <Provider store={store}>
+        <Main Component={Component}/>
+      </Provider>
+    </AppContainer>
+    , rootElement)
 }
 
 renderApp(App)
