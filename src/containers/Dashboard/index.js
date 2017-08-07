@@ -2,8 +2,8 @@
 
 import React from 'react'
 
-const Participants = () => (
-  <h1>Dash</h1>
+const Dashboard = () => (
+  <h1>Hot Loader</h1>
 )
 
-export default Participants
+export default Dashboard

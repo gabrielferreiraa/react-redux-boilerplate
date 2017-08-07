@@ -19,3 +19,11 @@ const renderApp = Component => {
 }
 
 renderApp(App)
+
+const isDev = () => process.env.NODE_ENV === 'development'
+
+if (isDev && module.hot) {
+  module.hot.accept('containers/App', () => {
+    renderApp(require('containers/App').default)
+  })
+}
