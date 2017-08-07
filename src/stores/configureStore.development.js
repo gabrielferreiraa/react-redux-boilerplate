@@ -1,3 +1,5 @@
+'use strict'
+
 import { applyMiddleware, createStore } from 'redux'
 import { DEV_TOOLS } from 'constants/configConstants'
 import globalReducers from 'reducers/GlobalReducers'
@@ -10,5 +12,13 @@ export function configureStore () {
     thunk, multi, promise
   ]
 
-  return applyMiddleware(...middlewares)(createStore)(globalReducers, DEV_TOOLS)
+  const store = applyMiddleware(...middlewares)(createStore)(globalReducers, DEV_TOOLS)
+
+  if (module.hot) {
+    module.hot.accept('reducers/GlobalReducers', () => {
+      store.replaceReducer(require('reducers/GlobalReducers').default)
+    })
+  }
+
+  return store
 }

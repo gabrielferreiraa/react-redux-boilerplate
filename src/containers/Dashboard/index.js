@@ -3,7 +3,7 @@
 import React from 'react'
 
 const Participants = () => (
-  <h1>Dashboard</h1>
+  <h1>Dash</h1>
 )
 
 export default Participants

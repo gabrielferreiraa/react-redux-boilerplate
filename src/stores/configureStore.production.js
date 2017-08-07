@@ -1,3 +1,5 @@
+'use strict'
+
 import { applyMiddleware, createStore } from 'redux'
 import globalReducers from 'reducers/GlobalReducers'
 import multi from 'redux-multi'
