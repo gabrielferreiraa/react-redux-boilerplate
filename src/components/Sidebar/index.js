@@ -28,6 +28,11 @@ class Sidebar extends Component {
   activeRoute (routeName) {
     const activeMenu = this.props.menus.filter(menu => menu.route === this.props.location.pathname)
     this.props.menuSelected(activeMenu[0])
+
+    if(routeName === '') {
+      return 'nav-item nav-dropdown'
+    }
+
     return this.props.location.pathname.includes(routeName) ? 'nav-item nav-dropdown open' : 'nav-item nav-dropdown'
   }
 

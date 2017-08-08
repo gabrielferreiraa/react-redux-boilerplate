@@ -3,15 +3,16 @@
 import React from 'react'
 import Icon from 'components/Icon'
 import { connect } from 'react-redux'
+import style from './css/HeaderFilters'
 
 const HeaderFilters = props => {
   const { activeMenu } = props
 
   return (
-    <div>
-      <Icon className={activeMenu.icon} />
-      <h5>
-        <b>{activeMenu.text}</b>
+    <div className={style.headerFilters}>
+      <Icon className={`${activeMenu.icon} ${style.moduleIcon}`} />
+      <h5 className={style.moduleName} >
+        {activeMenu.text}
       </h5>
     </div>
   )

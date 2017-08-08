@@ -1,11 +1,5 @@
-/**
- * CoreUI - Open Source Bootstrap Admin Template
- * @version v1.0.0-alpha.6
- * @link http://coreui.io
- * Copyright (c) 2017 creativeLabs Łukasz Holeczek
- * @license MIT
- */
-/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,900');
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -7646,7 +7640,7 @@ base-chart.chart {
 .sidebar {
   padding: 0;
   overflow: hidden;
-  color: #fff;
+  color: rgb(185, 185, 185);
   background: #263238; }
   .sidebar .sidebar-close {
     position: absolute;
@@ -7656,7 +7650,7 @@ base-chart.chart {
     font-size: 24px;
     font-weight: 800;
     line-height: 55px;
-    color: #fff;
+    color: rgb(185, 185, 185);
     background: 0;
     border: 0;
     opacity: .8; }
@@ -7711,16 +7705,16 @@ base-chart.chart {
       .sidebar .nav .nav-item .nav-link, .sidebar .nav .nav-item .navbar .dropdown-toggle, .navbar .sidebar .nav .nav-item .dropdown-toggle {
         display: block;
         padding: 0.75rem 1rem;
-        color: #fff;
+        color: rgb(185, 185, 185);
         text-decoration: none;
         background: transparent; }
         .sidebar .nav .nav-item .nav-link:hover, .sidebar .nav .nav-item .navbar .dropdown-toggle:hover, .navbar .sidebar .nav .nav-item .dropdown-toggle:hover {
-          color: #fff !important;
+          color: #FFF !important;
           background: #20a8d8 !important; }
           .sidebar .nav .nav-item .nav-link:hover i, .sidebar .nav .nav-item .navbar .dropdown-toggle:hover i, .navbar .sidebar .nav .nav-item .dropdown-toggle:hover i {
-            color: #fff !important; }
+            color: #FFF !important; }
         .sidebar .nav .nav-item .nav-link.active, .sidebar .nav .nav-item .navbar .active.dropdown-toggle, .navbar .sidebar .nav .nav-item .active.dropdown-toggle {
-          color: #fff;
+          color: rgb(185, 185, 185);
           background: #304047; }
           .sidebar .nav .nav-item .nav-link.active i, .sidebar .nav .nav-item .navbar .active.dropdown-toggle i, .navbar .sidebar .nav .nav-item .active.dropdown-toggle i {
             color: #20a8d8; }
@@ -7755,7 +7749,7 @@ base-chart.chart {
         .sidebar .nav .nav-item.nav-dropdown.open > ul, .sidebar .nav .nav-item.nav-dropdown.open > ol {
           max-height: 1000px; }
         .sidebar .nav .nav-item.nav-dropdown.open .nav-link, .sidebar .nav .nav-item.nav-dropdown.open .navbar .dropdown-toggle, .navbar .sidebar .nav .nav-item.nav-dropdown.open .dropdown-toggle {
-          color: #fff;
+          color: rgb(185, 185, 185);
           border-left: 0 !important; }
         .sidebar .nav .nav-item.nav-dropdown.open > .nav-link.nav-dropdown-toggle::before, .sidebar .nav .navbar .nav-item.nav-dropdown.open > .nav-dropdown-toggle.dropdown-toggle::before, .navbar .sidebar .nav .nav-item.nav-dropdown.open > .nav-dropdown-toggle.dropdown-toggle::before {
           transform: rotate(-90deg); }
@@ -7772,7 +7766,7 @@ base-chart.chart {
         padding: 0.09375rem 1rem;
         color: #cfd8dc; }
         .sidebar .nav .nav-item .nav-label:hover {
-          color: #fff;
+          color: rgb(185, 185, 185);
           text-decoration: none; }
         .sidebar .nav .nav-item .nav-label i {
           width: 20px;
