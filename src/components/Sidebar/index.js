@@ -1,7 +1,9 @@
+'use strict'
+
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { menusFetched, menuSearched } from 'actions/SidebarActions'
+import { menusFetched, menuSearched, menuSelected } from 'actions/SidebarActions'
 
 import MenuItem from './MenuItem'
 import MenuTree from './MenuTree'
@@ -24,6 +26,8 @@ class Sidebar extends Component {
   }
 
   activeRoute (routeName) {
+    const activeMenu = this.props.menus.filter(menu => menu.route === this.props.location.pathname)
+    this.props.menuSelected(activeMenu[0])
     return this.props.location.pathname.includes(routeName) ? 'nav-item nav-dropdown open' : 'nav-item nav-dropdown'
   }
 
@@ -57,6 +61,6 @@ class Sidebar extends Component {
 }
 
 const mapStateToProps = state => ({ menus: state.sidebar.menus })
-const mapDispatchToProps = dispatch => bindActionCreators({ menusFetched, menuSearched }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ menusFetched, menuSearched, menuSelected }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)

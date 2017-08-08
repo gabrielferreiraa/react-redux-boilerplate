@@ -6,7 +6,7 @@ import MenuItem from './MenuItem'
 
 const MenuTree = ({ activeRoute, handleClick, item }) => {
   return (
-    <li className={activeRoute('/components')}>
+    <li className={activeRoute(item.route)}>
       <a className='nav-link nav-dropdown-toggle' href='#' onClick={handleClick}>
         <Icon className={item.icon} />
         {item.text}

@@ -12,7 +12,7 @@
 * Redux Form
 * Redux Dev Tools
 * Babel
-* React hot loader
+* React Hot Loader
 * React Router
 * Storybook
 * Jest and Chai
