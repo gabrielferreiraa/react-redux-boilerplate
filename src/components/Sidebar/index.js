@@ -29,7 +29,7 @@ class Sidebar extends Component {
     const activeMenu = this.props.menus.filter(menu => menu.route === this.props.location.pathname)
     this.props.menuSelected(activeMenu[0])
 
-    if(routeName === '') {
+    if (routeName === '') {
       return 'nav-item nav-dropdown'
     }
 
