@@ -22,7 +22,7 @@ const data = {
         {
           id: 1,
           text: 'Cadastrar Participante',
-          icon: 'icon-user',
+          icon: '',
           route: '/participantes/novo',
           parent: false
         }
