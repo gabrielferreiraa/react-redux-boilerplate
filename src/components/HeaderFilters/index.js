@@ -4,6 +4,7 @@ import React from 'react'
 import Icon from 'components/Icon'
 import { connect } from 'react-redux'
 import style from './css/HeaderFilters'
+import { string } from 'prop-types'
 
 const HeaderFilters = props => {
   const { activeMenu } = props
@@ -16,6 +17,18 @@ const HeaderFilters = props => {
       </h5>
     </div>
   )
+}
+
+HeaderFilters.defaultProps = {
+  activeMenu: {
+    icon: 'icon-start'
+  }
+}
+
+HeaderFilters.propTypes = {
+  activeMenu: {
+    icon: string
+  }
 }
 
 const mapStateToProps = state => ({ activeMenu: state.sidebar.activeMenu })

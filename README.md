@@ -13,7 +13,7 @@
 * Redux Dev Tools
 * Babel
 * React Hot Loader
-* React Router
+* React Router 4
 * Storybook
 * Jest and Chai
 

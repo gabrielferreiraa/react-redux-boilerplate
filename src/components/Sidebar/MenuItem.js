@@ -2,19 +2,19 @@
 
 import React from 'react'
 import Icon from 'components/Icon'
-import { Link } from 'react-router'
+import { NavLink } from 'react-router-dom'
 
 const MenuItem = ({ ...item }) => {
   const { route, icon, text } = item
 
   return (
     <li className='nav-item'>
-      <Link to={route}
+      <NavLink to={route}
         className='nav-link'
         activeClassName='active'>
         <Icon className={icon} />
         {text}
-      </Link>
+      </NavLink>
     </li>
   )
 }
