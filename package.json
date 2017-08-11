@@ -54,7 +54,6 @@
     "babel-plugin-transform-runtime": "6.23.0",
     "babel-preset-env": "1.5.2",
     "file-loader": "^0.10.1",
-    "history": "^4.6.3",
     "react": "^15.5.4",
     "react-addons-css-transition-group": "15.5.2",
     "react-addons-transition-group": "15.5.2",

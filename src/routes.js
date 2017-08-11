@@ -10,12 +10,9 @@ import ParticipantAdd from 'containers/Participants/add'
 import Dashboard from 'containers/Dashboard'
 import Login from 'containers/Login'
 import Error404 from 'containers/Errors/404'
-import { createBrowserHistory } from 'history';
-
-const history = createBrowserHistory()
 
 export default props => (
-  <Router history={history}>
+  <Router>
     <Switch>
       <Route path='/login' name='Login' component={Login} />
       <App>
