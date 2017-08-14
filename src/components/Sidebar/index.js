@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { menusFetched, menuSearched, menuSelected } from 'actions/SidebarActions'
+import activeRoute from 'utils/ActiveRoute'
 
 import MenuItem from './MenuItem'
 import MenuTree from './MenuTree'
@@ -15,7 +16,7 @@ class Sidebar extends Component {
     super(props)
 
     this.handleClick = this.handleClick.bind(this)
-    this.activeRoute = this.activeRoute.bind(this)
+    this.activateRoute = this.activateRoute.bind(this)
     this.renderMenus = this.renderMenus.bind(this)
   }
 
@@ -24,9 +25,12 @@ class Sidebar extends Component {
     e.target.parentElement.classList.toggle('open')
   }
 
-  activeRoute (routeName) {
+  activateRoute (routeName) {
     const activeMenu = this.props.menus.filter(menu => menu.route === this.props.location.pathname)
-    this.props.menuSelected(activeMenu[0])
+
+    if (typeof activeMenu[0] !== 'undefined') {
+      this.props.menuSelected(activeMenu[0])
+    }
 
     if (routeName === '') {
       return 'nav-item nav-dropdown'
@@ -40,7 +44,7 @@ class Sidebar extends Component {
       return item.parent === false
               ? <MenuItem {...item} key={index} />
               : <MenuTree
-                activeRoute={this.activeRoute}
+                activeRoute={this.activateRoute}
                 handleClick={this.handleClick}
                 item={item}
                 key={index}

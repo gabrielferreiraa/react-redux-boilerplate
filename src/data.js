@@ -12,25 +12,25 @@ const data = {
       id: 2,
       text: 'Participantes',
       icon: 'icon-user',
-      route: '/participantes',
-      parent: false
-    }, {
-      id: 4,
-      text: 'Informacoes',
-      icon: 'icon-phone',
       route: '',
       parent: true,
       children: [
         {
-          id: 1,
-          text: 'Cadastrar Participante',
-          icon: 'icon-user',
+          id: 5,
+          text: 'Listar',
+          icon: '',
+          route: '/participantes',
+          parent: false
+        }, {
+          id: 3,
+          text: 'Cadastrar',
+          icon: '',
           route: '/participantes/novo',
           parent: false
         }, {
-          id: 1,
-          text: 'Editar Participante',
-          icon: 'icon-user',
+          id: 4,
+          text: 'Editar',
+          icon: '',
           route: '/participantes/editar/2',
           parent: false
         }
