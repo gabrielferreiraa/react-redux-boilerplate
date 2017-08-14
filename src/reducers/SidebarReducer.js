@@ -3,7 +3,7 @@
 import { handleActions } from 'redux-actions'
 import { MENU_FETCHED, MENU_SEARCHED, MENU_SELECTED } from 'constants/SidebarConstants'
 
-const INITIAL_STATE = { menus: [], activeMenu: '' }
+const INITIAL_STATE = { menus: [], activeMenu: {} }
 
 const handlers = {
   [MENU_FETCHED]: (state, action) => ({ ...state, menus: action.payload, startMenus: action.payload }),

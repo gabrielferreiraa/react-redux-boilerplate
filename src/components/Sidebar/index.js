@@ -13,7 +13,6 @@ import style from './css/Sidebar'
 class Sidebar extends Component {
   constructor (props) {
     super(props)
-    this.props.menusFetched()
 
     this.handleClick = this.handleClick.bind(this)
     this.activeRoute = this.activeRoute.bind(this)
@@ -47,6 +46,10 @@ class Sidebar extends Component {
                 key={index}
                 />
     })
+  }
+
+  componentWillMount () {
+    this.props.menusFetched()
   }
 
   render () {

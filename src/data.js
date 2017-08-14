@@ -27,6 +27,12 @@ const data = {
           icon: 'icon-user',
           route: '/participantes/novo',
           parent: false
+        }, {
+          id: 1,
+          text: 'Editar Participante',
+          icon: 'icon-user',
+          route: '/participantes/editar/2',
+          parent: false
         }
       ]
     }

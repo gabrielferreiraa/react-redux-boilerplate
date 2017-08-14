@@ -17,13 +17,12 @@ export default props => (
       <Route path='/login' name='Login' component={Login} />
       <App>
         <Switch>
-          <Route path='/404' component={Error404} />
+          <Route exact path='/' component={Dashboard} />
           <Route path='/dashboard' component={Dashboard} />
           <Participants>
-            <Route path='/participantes' component={Participants} />
-            <Route path='/participantes/editar/:id' component={ParticipantEdit} />
             <Route path='/participantes/novo' component={ParticipantAdd} />
           </Participants>
+          <Route path='/404' component={Error404} />
         </Switch>
       </App>
     </Switch>
