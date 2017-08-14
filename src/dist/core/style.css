@@ -4407,6 +4407,7 @@ tbody.collapse.show {
 }
 
 .breadcrumb {
+    margin: -15px;
     padding: 0.75rem 1rem;
     margin-bottom: 1rem;
     list-style: none;

@@ -5,6 +5,7 @@ import Aside from 'components/Aside'
 import Header from 'components/Header'
 import Sidebar from 'components/Sidebar'
 import Footer from 'components/Footer'
+import Breadcrumb from 'components/Breadcrumb'
 import Messages from 'components/ReduxToastr'
 
 const App = props => (
@@ -14,6 +15,7 @@ const App = props => (
       <div className='app-body'>
         <Sidebar {...props} />
         <main className='main'>
+          <Breadcrumb />
           { props.children }
         </main>
         <Aside />

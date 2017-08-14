@@ -1,7 +1,7 @@
 'use strict'
 
 import React from 'react'
-import { Link } from 'react-router'
+import { NavLink } from 'react-router-dom'
 
 const Page404 = () => (
   <div className='app flex-row align-items-center'>
@@ -17,9 +17,9 @@ const Page404 = () => (
       </div>
       <div className='row'>
         <div className='col-md-12 text-center'>
-          <Link to='/dashboard' className='btn btn-warning'>
-                    Me tire daqui
-                  </Link>
+          <NavLink to='/dashboard' className='btn btn-warning'>
+            Me tire daqui
+          </NavLink>
         </div>
       </div>
     </div>

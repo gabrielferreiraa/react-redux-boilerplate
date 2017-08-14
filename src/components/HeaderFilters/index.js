@@ -9,11 +9,13 @@ const HeaderFilters = props => {
   const { activeMenu } = props
 
   return (
-    <div className={style.headerFilters}>
-      <Icon className={`${activeMenu.icon} ${style.moduleIcon}`} />
-      <h5 className={style.moduleName} >
-        {activeMenu.text}
-      </h5>
+    <div>
+      <div className={style.headerFilters}>
+        <Icon className={`${activeMenu.icon} ${style.moduleIcon}`} />
+        <h5 className={style.moduleName} >
+          {activeMenu.text}
+        </h5>
+      </div>
     </div>
   )
 }

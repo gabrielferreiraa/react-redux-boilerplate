@@ -8,7 +8,7 @@ const MenuTree = ({ activeRoute, handleClick, item }) => {
   return (
     <li className={activeRoute(item.route)}>
       <a className='nav-link nav-dropdown-toggle' href='#' onClick={handleClick}>
-        <Icon className={item.icon} />
+        {item.icon && <Icon className={item.icon} />}
         {item.text}
       </a>
       <ul className='nav-dropdown-items'>

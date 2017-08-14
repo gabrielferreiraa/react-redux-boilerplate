@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { menusFetched, menuSearched, menuSelected } from 'actions/SidebarActions'
-import activeRoute from 'utils/ActiveRoute'
 
 import MenuItem from './MenuItem'
 import MenuTree from './MenuTree'

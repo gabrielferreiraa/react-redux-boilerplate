@@ -15,12 +15,12 @@ test("activeRoute('path') should return 'path'", () => {
   expect(activeRoute('path')).to.be.equal('path')
 })
 
-test("activeRoute('/path/child') should return 'path'", () => {
-  expect(activeRoute('/path/child')).to.be.equal('path')
+test("activeRoute('/path/child') should return 'path/child'", () => {
+  expect(activeRoute('/path/child')).to.be.equal('path/child')
 })
 
-test("activeRoute('/path/child/2') should return 'path'", () => {
-  expect(activeRoute('/path/child/2')).to.be.equal('path')
+test("activeRoute('/path/child/2') should return 'path/child'", () => {
+  expect(activeRoute('/path/child/2')).to.be.equal('path/child')
 })
 
 test('activeRoute(2) should throw an error', () => {

@@ -12,7 +12,7 @@ const MenuItem = ({ ...item }) => {
       <NavLink to={route}
         className='nav-link'
         activeClassName='active'>
-        <Icon className={icon} />
+        {icon && <Icon className={icon} />}
         {text}
       </NavLink>
     </li>

@@ -11,8 +11,8 @@ const activeRoute = (route = '/') => {
 
   route = hasBarOnFirst(route) ? route.substr(1) : route
 
-  if (hasChild(route)) {
-    route = route.split('/')[0]
+  if (hasChild(route) && route.split('/').length >= 3) {
+    route = `${route.split('/')[0]}/${route.split('/')[1]}`
   }
 
   return route
