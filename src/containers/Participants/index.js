@@ -4,7 +4,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { edit, add } from 'actions/ParticipantFormActions'
+import { edit, add } from 'actions/ParticipantActions'
 import Form from './form'
 import Management from './management'
 
