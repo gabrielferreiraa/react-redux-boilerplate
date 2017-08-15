@@ -11,7 +11,6 @@ const hasBarOnFirst = route => route.length > 1 && route.charAt(0) === '/'
 const findRouteName = url => routes[`/${activeRoute(url)}`]
 
 const getPaths = pathname => {
-
   const paths = pathname === '/dashboard' ? ['/'] : ['/dashboard']
 
   if (pathname === '/') return paths

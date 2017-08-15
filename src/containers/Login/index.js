@@ -1,7 +1,6 @@
 'use strict'
 
 import React, { Component } from 'react'
-// import { browserHistory } from 'react-router-dom'
 import Particles from 'components/Particles'
 import style from './css/Login'
 

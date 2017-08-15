@@ -16,19 +16,19 @@ const data = {
       parent: true,
       children: [
         {
-          id: 5,
+          id: 3,
           text: 'Listar',
           icon: '',
           route: '/participantes',
           parent: false
         }, {
-          id: 3,
+          id: 4,
           text: 'Cadastrar',
           icon: '',
           route: '/participantes/novo',
           parent: false
         }, {
-          id: 4,
+          id: 5,
           text: 'Editar',
           icon: '',
           route: '/participantes/editar/2',
