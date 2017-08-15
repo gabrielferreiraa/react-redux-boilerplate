@@ -22,7 +22,6 @@ module.exports = {
     }),
 
     new webpack.optimize.UglifyJsPlugin(common.uglifyJsPluginConfig),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new HtmlPlugin(common.htmlPluginConfig)
   ],
