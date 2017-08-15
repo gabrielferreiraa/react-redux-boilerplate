@@ -4,14 +4,9 @@ import React from 'react'
 
 const Page = ({ page, pageLink }) => {
   const isReticence = page => page === '...'
-  const Component = isReticence(page) ? 'span' : 'a'
-  const href = isReticence(page) ? null : pageLink
+  const href = isReticence(page) ? 'javascript:void(0)' : pageLink
 
-  return (
-    <Component href={href}>
-      {page}
-    </Component>
-  )
+  return <a href={href}>{page}</a>
 }
 
 export default Page

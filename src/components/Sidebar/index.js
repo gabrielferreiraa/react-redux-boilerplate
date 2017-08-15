@@ -25,7 +25,11 @@ class Sidebar extends Component {
   }
 
   activateRoute (routeName) {
-    const activeMenu = this.props.menus.filter(menu => menu.route === this.props.location.pathname)
+    const activeMenu = this.props.menus.filter(menu => {
+      return menu.parent
+        ? menu.children.filter(menu => menu.route === this.props.location.pathname)
+        : menu.route === this.props.location.pathname
+    })
 
     if (typeof activeMenu[0] !== 'undefined') {
       this.props.menuSelected(activeMenu[0])
