@@ -15,7 +15,7 @@
 * React Hot Loader
 * React Router 4
 * Storybook
-* Jest and Chai
+* Jest and Chai (TDD)
 
 ## Up and running
 
