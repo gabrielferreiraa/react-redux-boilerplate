@@ -1,6 +1,6 @@
 # Starter Kit CoreUI - React Redux 
 
-###### When I thought of using [CoreUI](https://github.com/mrholek/CoreUI-Free-Bootstrap-Admin-Template) with React, I realized it's very simple for what I needed, so I've adapted it to ES6, Flux / Redux and Webpack 2 flow.
+###### [Work in Progress] When I thought of using [CoreUI](https://github.com/mrholek/CoreUI-Free-Bootstrap-Admin-Template) with React, I realized it's very simple for what I needed, so I've adapted it to ES6, Flux / Redux and Webpack 2 flow.
 
   <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
 

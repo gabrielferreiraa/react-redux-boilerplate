@@ -18,16 +18,14 @@ export const add = values => {
 }
 
 export const fetch = () => {
-  axios.get('https://api.github.com/users')
-    .then(resp => {
-      console.log(resp)
-    })
-    .catch(err => {
-      console.log(err)
-    })
-
-  return {
-    type: type.FETCH,
-    payload: ''
+  return dispatch => {
+    axios.get('https://api.github.com/users')
+      .then(resp => dispatch({
+        type: type.FETCH,
+        payload: resp.data
+      }))
+      .catch(err => {
+        console.log(err)
+      })
   }
 }

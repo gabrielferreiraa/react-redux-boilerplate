@@ -10,7 +10,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 class Management extends Component {
-  componentWillMount (){
+  componentWillMount () {
     this.props.fetch()
   }
 
@@ -42,7 +42,7 @@ class Management extends Component {
       return <span className={`badge badge-${listStatus[status].className}`}>{listStatus[status].name}</span>
     }
 
-    const headers = ['Nome', 'Cargo', 'Status', 'Ações']
+    const headers = ['#', 'login']
 
     return (
       <div>
@@ -50,10 +50,10 @@ class Management extends Component {
         <div className='animated fadeIn'>
           <div className={`${style.cardDataTable} card`}>
             <input type='text' className={`form-control ${style.searchInput}`} placeholder='Busca' />
-            {/*<TableGenerator*/}
-              {/*indicators={headers}*/}
-              {/*data={}*/}
-              {/*router='participantes' />*/}
+            <TableGenerator
+              indicators={headers}
+              data={this.props.participants}
+              router='participantes' />
             {/*<table className='table table-hover'>*/}
               {/*{renderHeader(headers)}*/}
               {/*<tbody>*/}
@@ -112,6 +112,6 @@ class Management extends Component {
   }
 }
 
-const mapStateToProps = state => ({ participants: state.participants.data })
+const mapStateToProps = state => ({ participants: state.participants.list })
 const mapDispatchToProps = dispatch => bindActionCreators({ fetch }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Management)
