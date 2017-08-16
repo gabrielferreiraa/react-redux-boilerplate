@@ -10,7 +10,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 class Management extends Component {
-  componentWillMount () {
+  componentDidMount () {
     this.props.fetch()
   }
 
