@@ -36,7 +36,10 @@ class Management extends Component {
             <TableGenerator
               indicators={this.state.headers}
               data={this.props.participants}
-              router='participantes' />
+              router='participantes'
+              edit
+              del
+            />
             <PaginationWithText
               registersTotal={13122}
               total={50}

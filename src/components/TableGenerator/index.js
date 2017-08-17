@@ -7,34 +7,39 @@ import { Link } from 'react-router-dom'
 import style from './css/TableGenerator'
 
 const generateHeaders = indicators => indicators.map((item, index) => <th key={index}>{Object.values(item)}</th>)
-const generateRows = (row, indicators) => indicators.map((item, index) => <td key={index}>{row[Object.keys(item)]}</td>)
+const Edit = ({ router, id }) => (
+  <Link
+    to={`/${router}/editar/${id}`}>
+    <button type='button' className='btn btn-warning btn-sm'>
+      <Icon className='icon-pencil' />
+    </button>
+  </Link>
+)
 
-const TableGenerator = ({ indicators, data, router }) => (
+const Delete = () => (
+  <button
+    type='button'
+    className='btn btn-danger btn-sm'>
+    <Icon className='icon-trash' />
+  </button>
+)
+
+const TableGenerator = ({ indicators, data, router, ...props }) => (
   <div>
     <Table hover className={style.dataTable}>
       <thead>
         <tr>
           {generateHeaders(indicators)}
+          <th className={style.action}>Ações</th>
         </tr>
       </thead>
       <tbody>
         {data.map((row, index) => (
           <tr key={index}>
-            {generateRows(row, indicators)}
+            {indicators.map((item, index) => <td key={index}>{row[Object.keys(item)]}</td>)}
             <td className={style.action}>
-              <Link
-                to={`/${router}/editar/2`}>
-                <button
-                  type='button'
-                  className='btn btn-warning btn-sm'>
-                  <Icon className='icon-pencil' />
-                </button>
-              </Link>
-              <button
-                type='button'
-                className='btn btn-danger btn-sm'>
-                <Icon className='icon-trash' />
-              </button>
+              {props.edit && <Edit router={router} id={row.id} />}
+              {props.del && <Delete />}
             </td>
           </tr>
         ))}
@@ -42,6 +47,7 @@ const TableGenerator = ({ indicators, data, router }) => (
       <thead>
         <tr>
           {generateHeaders(indicators)}
+          <th className={style.action}>Ações</th>
         </tr>
       </thead>
     </Table>
