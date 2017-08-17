@@ -1,6 +1,7 @@
 'use strict'
 
 import * as type from 'constants/ParticipantConstants'
+import { URL_API } from 'constants/configConstants'
 import axios from 'axios'
 
 export const edit = values => {
@@ -19,7 +20,7 @@ export const add = values => {
 
 export const fetch = () => {
   return dispatch => {
-    axios.get('https://api.github.com/users')
+    axios.get(URL_API)
       .then(resp => dispatch({
         type: type.FETCH,
         payload: resp.data

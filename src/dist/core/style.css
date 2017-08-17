@@ -2143,7 +2143,7 @@ pre code {
 .table th,
 .table td {
     padding: 0.75rem;
-    vertical-align: top;
+    vertical-align: middle;
     border-top: 1px solid #cfd8dc;
 }
 
@@ -12439,6 +12439,7 @@ app-root {
     flex: 1;
     padding: 15px;
     min-width: 0;
+    background-color: #f1f4f5;
 }
 
 .app-body .sidebar {

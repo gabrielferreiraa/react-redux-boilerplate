@@ -5,45 +5,28 @@ import HeaderFilters from 'components/HeaderFilters'
 import style from './css/Management'
 import TableGenerator from 'components/TableGenerator'
 import { fetch } from 'actions/ParticipantActions'
-import Pagination from 'components/Pagination'
+import PaginationWithText from 'components/Pagination/Text'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 class Management extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      headers: [
+        { id: '#' },
+        { login: 'Login' },
+        { html_url: 'URL' }
+      ]
+    }
+  }
+
   componentDidMount () {
     this.props.fetch()
   }
 
   render () {
-    const styledStatus = (status = 4) => {
-      const listStatus = {
-        0: {
-          name: 'Pré Cadastro',
-          className: 'warning'
-        },
-        1: {
-          name: 'Ativo',
-          className: 'success'
-        },
-        2: {
-          name: 'Inativo',
-          className: 'default'
-        },
-        3: {
-          name: 'Recusado',
-          className: 'danger'
-        },
-        4: {
-          name: 'Sem status',
-          className: 'primary'
-        }
-      }
-
-      return <span className={`badge badge-${listStatus[status].className}`}>{listStatus[status].name}</span>
-    }
-
-    const headers = ['#', 'login']
-
     return (
       <div>
         <HeaderFilters />
@@ -51,60 +34,14 @@ class Management extends Component {
           <div className={`${style.cardDataTable} card`}>
             <input type='text' className={`form-control ${style.searchInput}`} placeholder='Busca' />
             <TableGenerator
-              indicators={headers}
+              indicators={this.state.headers}
               data={this.props.participants}
               router='participantes' />
-            {/*<table className='table table-hover'>*/}
-              {/*{renderHeader(headers)}*/}
-              {/*<tbody>*/}
-                {/*<tr>*/}
-                  {/*<td>Júlia Santos Melo</td>*/}
-                  {/*<td>Gerente</td>*/}
-                  {/*<td>{styledStatus(1)}</td>*/}
-                  {/*<td>*/}
-                    {/*<div className='btn-group' role='group'>*/}
-                      {/*<button type='button' className='btn btn-warning btn-sm'><i className='icon-pencil' /></button>*/}
-                      {/*<button type='button' className='btn btn-danger btn-sm'><i className='icon-trash' /></button>*/}
-                    {/*</div>*/}
-                  {/*</td>*/}
-                {/*</tr>*/}
-                {/*<tr>*/}
-                  {/*<td>Felipe Correia Barros</td>*/}
-                  {/*<td>Proprietário</td>*/}
-                  {/*<td>{styledStatus(2)}</td>*/}
-                  {/*<td>*/}
-                    {/*<div className='btn-group' role='group'>*/}
-                      {/*<button type='button' className='btn btn-warning btn-sm'><i className='icon-pencil' /></button>*/}
-                      {/*<button type='button' className='btn btn-danger btn-sm'><i className='icon-trash' /></button>*/}
-                    {/*</div>*/}
-                  {/*</td>*/}
-                {/*</tr>*/}
-                {/*<tr>*/}
-                  {/*<td>Emily Gomes Barros</td>*/}
-                  {/*<td>Vendedor</td>*/}
-                  {/*<td>{styledStatus(3)}</td>*/}
-                  {/*<td>*/}
-                    {/*<div className='btn-group' role='group'>*/}
-                      {/*<button type='button' className='btn btn-warning btn-sm'><i className='icon-pencil' /></button>*/}
-                      {/*<button type='button' className='btn btn-danger btn-sm'><i className='icon-trash' /></button>*/}
-                    {/*</div>*/}
-                  {/*</td>*/}
-                {/*</tr>*/}
-                {/*<tr>*/}
-                  {/*<td>Tiago Rodrigues Melo</td>*/}
-                  {/*<td>Gerente</td>*/}
-                  {/*<td>{styledStatus(1)}</td>*/}
-                  {/*<td>*/}
-                    {/*<div className='btn-group' role='group'>*/}
-                      {/*<button type='button' className='btn btn-warning btn-sm'><i className='icon-pencil' /></button>*/}
-                      {/*<button type='button' className='btn btn-danger btn-sm'><i className='icon-trash' /></button>*/}
-                    {/*</div>*/}
-                  {/*</td>*/}
-                {/*</tr>*/}
-              {/*</tbody>*/}
-              {/*{renderHeader(headers)}*/}
-            {/*</table>*/}
-            <Pagination total={50} activePage={23} pageLink='https://mypage.com.br/%pageNumber%' />
+            <PaginationWithText
+              registersTotal={13122}
+              total={50}
+              activePage={20}
+            />
           </div>
         </div>
       </div>
