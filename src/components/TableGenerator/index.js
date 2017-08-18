@@ -7,19 +7,18 @@ import { Link } from 'react-router-dom'
 import style from './css/TableGenerator'
 
 const generateHeaders = indicators => indicators.map((item, index) => <th key={index}>{Object.values(item)}</th>)
+
 const Edit = ({ router, id }) => (
   <Link
     to={`/${router}/editar/${id}`}>
-    <button type='button' className='btn btn-warning btn-sm'>
+    <button type='button' title='Editar' className='btn btn-warning btn-sm'>
       <Icon className='icon-pencil' />
     </button>
   </Link>
 )
 
 const Delete = () => (
-  <button
-    type='button'
-    className='btn btn-danger btn-sm'>
+  <button type='button' title='Excluir' className='btn btn-danger btn-sm'>
     <Icon className='icon-trash' />
   </button>
 )

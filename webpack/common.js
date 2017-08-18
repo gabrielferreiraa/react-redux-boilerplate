@@ -30,7 +30,7 @@ module.exports = {
   },
 
   htmlPluginConfig: {
-    title: 'Starter Kit Redux',
+    title: 'Starter Kit React',
     template: join(paths.src, 'template.html')
   },
 
