@@ -19,7 +19,7 @@ class Management extends Component {
         { id: '#' },
         { login: 'Login' },
         { html_url: 'URL' }
-      ],
+      ]
     }
   }
 
