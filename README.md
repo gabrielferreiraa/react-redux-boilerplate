@@ -6,7 +6,7 @@
 
 ## This kit is using:
 
-* Template [CoreUI](https://github.com/mrholek/CoreUI-Free-Bootstrap-Admin-Template)
+* Template[CoreUI](https://github.com/mrholek/CoreUI-Free-Bootstrap-Admin-Template)
 * Webpack 2
 * Redux
 * Redux Form
@@ -16,6 +16,7 @@
 * React Router 4
 * Storybook
 * Jest and Chai (TDD)
+* [Ducks](https://github.com/erikras/ducks-modular-redux)- Redux Reducer Bundles
 
 ## Up and running
 
