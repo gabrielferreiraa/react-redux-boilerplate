@@ -9,7 +9,7 @@ const paths = {
   docs: join(__dirname, '..', 'docs'),
   dist: join(__dirname, '..', 'src', 'dist'),
   img: join(__dirname, '..', 'public', 'img'),
-  reduxFlow: join(__dirname, '..', 'src', 'redux-flow'),
+  reduxFlow: join(__dirname, '..', 'src', 'redux-flow')
 }
 
 module.exports = {
@@ -107,9 +107,9 @@ module.exports = {
       utils: join(paths.src, 'utils'),
       containers: join(paths.src, 'containers'),
       dist: join(paths.src, 'dist'),
-      //constants: join(paths.src, 'constants'),
+      // constants: join(paths.src, 'constants'),
       reducers: join(paths.reduxFlow, 'reducers'),
-      //actions: join(paths.src, 'actions'),
+      // actions: join(paths.src, 'actions'),
       stores: join(paths.reduxFlow, 'stores'),
       css: join(paths.dist, 'css'),
       img: join(paths.img, 'img'),

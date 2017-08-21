@@ -8,10 +8,10 @@ import {
   Redirect
 } from 'react-router-dom'
 
-import App from 'containers/App'
-import Participants from 'containers/Participants'
-import Dashboard from 'containers/Dashboard'
-import Login from 'containers/Login'
+import App from 'containers/app'
+import Participants from 'containers/participants'
+import Dashboard from 'containers/dashboard'
+import Login from 'containers/login'
 
 export default props => (
   <Router>

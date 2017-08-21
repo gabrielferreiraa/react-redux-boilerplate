@@ -1,7 +1,7 @@
 'use strict'
 
 import React, { Component } from 'react'
-import Globals from 'src/Globals'
+import Globals from 'src/globals'
 
 class Footer extends Component {
   render () {

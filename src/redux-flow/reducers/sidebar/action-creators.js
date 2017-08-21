@@ -1,6 +1,6 @@
 'use strict'
 
-import * as action from 'constants/SidebarConstants'
+import * as action from './actions'
 import data from 'src/data'
 
 export const fetch = () => ({ type: action.FETCH, payload: data.menus })

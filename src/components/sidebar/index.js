@@ -32,7 +32,7 @@ class Sidebar extends Component {
     })
 
     if (typeof activeMenu[0] !== 'undefined') {
-      this.props.menuSelected(activeMenu[0])
+      this.props.select(activeMenu[0])
     }
 
     if (routeName === '') {
@@ -56,7 +56,7 @@ class Sidebar extends Component {
   }
 
   componentWillMount () {
-    this.props.menusFetched()
+    this.props.fetch()
   }
 
   render () {
@@ -65,7 +65,7 @@ class Sidebar extends Component {
     return (
       <div className='sidebar'>
         <nav className='sidebar-nav'>
-          <input type='text' className={style.filterMenus} placeholder='Filtrar menus' onChange={this.props.menuSearched} />
+          <input type='text' className={style.filterMenus} placeholder='Filtrar menus' onChange={this.props.search} />
           <ul className='nav'>
             {this.renderMenus(menus)}
           </ul>
@@ -76,6 +76,6 @@ class Sidebar extends Component {
 }
 
 const mapStateToProps = state => ({ menus: state.sidebar.menus })
-const mapDispatchToProps = dispatch => bindActionCreators({ menusFetched, menuSearched, menuSelected }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ fetch, search, select }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)
