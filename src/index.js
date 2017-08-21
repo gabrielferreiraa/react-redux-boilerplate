@@ -4,7 +4,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader'
-import { configureStore } from 'stores/configureStore'
+import { configureStore } from 'stores/configure-store'
 
 import Main from './main'
 

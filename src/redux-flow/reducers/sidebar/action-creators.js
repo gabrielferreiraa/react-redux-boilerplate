@@ -3,6 +3,6 @@
 import * as action from 'constants/SidebarConstants'
 import data from 'src/data'
 
-export const menusFetched = () => ({ type: action.MENU_FETCHED, payload: data.menus })
-export const menuSearched = e => ({ type: action.MENU_SEARCHED, payload: e.target.value })
-export const menuSelected = menu => ({ type: action.MENU_SELECTED, payload: menu })
+export const fetch = () => ({ type: action.FETCH, payload: data.menus })
+export const search = e => ({ type: action.SEARCH, payload: e.target.value })
+export const select = menu => ({ type: action.SELECT, payload: menu })

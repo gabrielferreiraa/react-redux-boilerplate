@@ -1,5 +1,5 @@
 'use strict'
 
-export const EDIT = 'EDIT'
-export const ADD = 'ADD'
-export const FETCH = 'FETCH'
+export const EDIT = 'participants/EDIT'
+export const ADD = 'participants/ADD'
+export const FETCH = 'participants/FETCH'

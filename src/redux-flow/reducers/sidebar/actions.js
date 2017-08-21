@@ -1,5 +1,5 @@
 'use strict'
 
-export const MENU_FETCHED = 'MENU_FETCHED'
-export const MENU_SEARCHED = 'MENU_SEARCHED'
-export const MENU_SELECTED = 'MENU_SELECTED'
+export const MENU_FETCHED = 'sidebar/FETCH'
+export const MENU_SEARCHED = 'sidebar/SEARCH'
+export const MENU_SELECTED = 'sidebar/SELECT'
