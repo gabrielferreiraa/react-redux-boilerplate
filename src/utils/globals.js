@@ -1,4 +1,6 @@
-const Globals = {
+'use strict'
+
+const globals = {
   nameProject: 'Starter Kit React',
   author: {
     name: '@gabrielferreiraa',
@@ -6,4 +8,4 @@ const Globals = {
   }
 }
 
-export default Globals
+export default globals

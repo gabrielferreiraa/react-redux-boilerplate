@@ -8,7 +8,8 @@ const paths = {
   src: join(__dirname, '..', 'src'),
   docs: join(__dirname, '..', 'docs'),
   dist: join(__dirname, '..', 'src', 'dist'),
-  img: join(__dirname, '..', 'public', 'img')
+  img: join(__dirname, '..', 'public', 'img'),
+  reduxFlow: join(__dirname, '..', 'src', 'redux-flow'),
 }
 
 module.exports = {
@@ -106,10 +107,10 @@ module.exports = {
       utils: join(paths.src, 'utils'),
       containers: join(paths.src, 'containers'),
       dist: join(paths.src, 'dist'),
-      constants: join(paths.src, 'constants'),
-      reducers: join(paths.src, 'reducers'),
-      actions: join(paths.src, 'actions'),
-      stores: join(paths.src, 'stores'),
+      //constants: join(paths.src, 'constants'),
+      reducers: join(paths.reduxFlow, 'reducers'),
+      //actions: join(paths.src, 'actions'),
+      stores: join(paths.reduxFlow, 'stores'),
       css: join(paths.dist, 'css'),
       img: join(paths.img, 'img'),
       modules: join(paths.modules, 'modules')
