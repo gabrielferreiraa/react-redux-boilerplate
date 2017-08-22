@@ -10,11 +10,13 @@ import Management from './management'
 
 const Participant = props => (
   <div>
+    <h1>{props.isFetching && 'FETCHING'}</h1>
     <Route exact path='/participantes' component={Management} />
     <Route path='/participantes/novo' render={() => <Form onSubmit={props.add} {...props} />} />
     <Route path='/participantes/editar/:id' render={() => <Form onSubmit={props.edit} {...props} />} />
   </div>
 )
 
+const mapStateToProps = state => ({ isFetching: state.participants.isFetching })
 const mapDispatchToProps = dispatch => bindActionCreators({ edit, add }, dispatch)
-export default connect(null, mapDispatchToProps)(Participant)
+export default connect(mapStateToProps, mapDispatchToProps)(Participant)

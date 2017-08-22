@@ -4,29 +4,18 @@ import * as action from './actions'
 import { URL_API } from 'src/constants'
 import axios from 'axios'
 
-export const edit = values => {
-  return {
-    type: action.EDIT,
-    payload: ''
-  }
-}
+export const edit = values => ({ type: action.EDIT, payload: '' })
+export const add = values => ({ type: action.ADD, payload: '' })
+export const fetch = () => dispatch => {
+  dispatch({ type: action.FETCHING })
 
-export const add = values => {
-  return {
-    type: action.ADD,
-    payload: ''
-  }
-}
-
-export const fetch = () => {
-  return dispatch => {
-    axios.get(URL_API)
-      .then(resp => dispatch({
-        type: action.FETCH,
-        payload: resp.data
-      }))
-      .catch(err => {
-        console.log(err)
-      })
-  }
+  axios.get(URL_API)
+    .then(resp => dispatch({
+      type: action.SUCCESS,
+      payload: resp.data
+    }))
+    .catch(err => {
+      dispatch({ type: ERROR })
+      console.log(err)
+    })
 }
