@@ -15,7 +15,7 @@ export const fetch = () => dispatch => {
       payload: resp.data
     }))
     .catch(err => {
-      dispatch({ type: ERROR })
+      dispatch({ type: action.ERROR })
       console.log(err)
     })
 }
