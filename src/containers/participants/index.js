@@ -7,11 +7,11 @@ import { connect } from 'react-redux'
 import { edit, add } from 'reducers/participants/action-creators'
 import Form from './form'
 import Management from './management'
-import Loading from 'react-loading'
+import Loader from 'components/loader'
 
 const Participant = props => (
   <div>
-    {props.isFetching && <Loading type='cubes' color='#444' />}
+    {props.isFetching && <Loader />}
     <Route exact path='/participantes' component={Management} />
     <Route path='/participantes/novo' render={() => <Form onSubmit={props.add} {...props} />} />
     <Route path='/participantes/editar/:id' render={() => <Form onSubmit={props.edit} {...props} />} />
