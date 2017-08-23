@@ -2,22 +2,23 @@
 
 import * as action from './actions'
 import { URL_API } from 'src/constants'
-import axios from 'axios'
+import { request } from 'utils/ws-client'
+import { error } from 'components/messages'
 
 export const edit = values => ({ type: action.EDIT, payload: '' })
 export const add = values => ({ type: action.ADD, payload: '' })
 export const fetch = () => (dispatch, getState) => {
-  if (!getState().participants.isFetching) {
+  const hasRequest = getState().participants.isFetching
+
+  if (!hasRequest) {
     dispatch({ type: action.FETCHING })
 
-    axios.get(URL_API)
-      .then(resp => dispatch({
-        type: action.SUCCESS,
-        payload: resp.data
-      }))
-      .catch(err => {
-        dispatch({ type: action.ERROR })
-        console.log(err)
+    const options = { method: 'GET', 'url': URL_API }
+    request(options)
+      .then(resp => dispatch({ type: action.SUCCESS, payload: resp.data }))
+      .catch(() => {
+        error('Houve um problema ao buscar informações')
+        return dispatch({ type: action.ERROR })
       })
   }
 }

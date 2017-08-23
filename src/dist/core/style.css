@@ -11,6 +11,17 @@ body {
     margin: 0;
 }
 
+/* Redux Toastr */
+.rrt-left-container .rrt-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rrt-middle-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
 article,
 aside,
 footer,

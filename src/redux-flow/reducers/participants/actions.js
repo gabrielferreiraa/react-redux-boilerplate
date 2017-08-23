@@ -1,8 +1,10 @@
 'use strict'
 
-export const EDIT = 'participants/EDIT'
-export const ADD = 'participants/ADD'
-export const FETCH = 'participants/FETCH'
-export const FETCHING = 'participants/FETCHING'
-export const SUCCESS = 'participants/SUCCESS'
-export const ERROR = 'participants/ERROR'
+const reducer = 'participants'
+
+export const EDIT = `${reducer}/EDIT`
+export const ADD = `${reducer}/ADD`
+export const FETCH = `${reducer}/FETCH`
+export const FETCHING = `${reducer}/FETCHING`
+export const SUCCESS = `${reducer}/SUCCESS`
+export const ERROR = `${reducer}/ERROR`

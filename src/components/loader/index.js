@@ -5,10 +5,6 @@ import Loading from 'react-loading'
 import style from './css/loader'
 
 class Loader extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   componentWillMount () {
     document.body.classList.add(style.block)
   }
@@ -20,7 +16,7 @@ class Loader extends Component {
   render () {
     return (
       <div className={style.loader}>
-        <Loading type='bars' color='#263238' delay='100' height='44' width='44'/>
+        <Loading type='bars' color='#37474f' delay='100' height='44' width='44' />
       </div>
     )
   }
