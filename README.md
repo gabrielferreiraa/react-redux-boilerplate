@@ -20,7 +20,7 @@
 
 ## Up and running
 
-- Clone this repository: `git clone git@github.com:gabrielferreiraa/starterKitReact.git`;
+- Clone this repository: `git clone git@github.com:gabrielferreiraa/react-redux-boilerplate.git`;
 - Install dependencies: `yarn` or `yarn install`;
 - Run `yarn dev` and access `http://localhost:3000`;
 - Run `yarn build` for production build;
