@@ -1,5 +1,7 @@
 'use strict'
 
-export const FETCH = 'sidebar/FETCH'
-export const SEARCH = 'sidebar/SEARCH'
-export const SELECT = 'sidebar/SELECT'
+const reducer = 'sidebar'
+
+export const FETCH = `${reducer}/FETCH`
+export const SEARCH = `${reducer}/SEARCH`
+export const SELECT = `${reducer}/SELECT`

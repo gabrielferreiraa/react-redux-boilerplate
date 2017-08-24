@@ -16,7 +16,7 @@ class Loader extends Component {
   render () {
     return (
       <div className={style.loader}>
-        <Loading type='bars' color='#37474f' delay='100' height='44' width='44' />
+        <Loading type='bars' color='#37474f' delay={0} height='44' width='44' />
       </div>
     )
   }

@@ -271,6 +271,7 @@ template {
     li::first-line {
         text-shadow: none !important;
         box-shadow: none !important;
+        outline: none;
     }
 
     a,

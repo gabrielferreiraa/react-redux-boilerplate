@@ -1,7 +1,6 @@
 'use strict'
 
 import * as action from './actions'
-import { URL_API } from 'src/constants'
 import { request } from 'utils/ws-client'
 import { error } from 'components/messages'
 
@@ -13,8 +12,7 @@ export const fetch = () => (dispatch, getState) => {
   if (!hasRequest) {
     dispatch({ type: action.FETCHING })
 
-    const options = { method: 'GET', 'url': URL_API }
-    request(options)
+    request({ method: 'GET' })
       .then(resp => dispatch({ type: action.SUCCESS, payload: resp.data }))
       .catch(() => {
         error('Houve um problema ao buscar informações')
