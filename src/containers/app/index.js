@@ -10,6 +10,7 @@ import Messages from 'components/redux-toastr'
 import LoaderFullPage from 'components/loader-full-page'
 
 import globals from 'src/globals'
+import '!style-loader!css-loader!src/dist/core/style.css'
 
 class App extends Component {
   constructor (props) {
