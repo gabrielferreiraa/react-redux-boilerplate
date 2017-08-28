@@ -20,10 +20,18 @@
 
 ## Up and running
 
-- Clone this repository: `git clone git@github.com:gabrielferreiraa/react-redux-boilerplate.git`;
-- Install dependencies: `yarn` or `yarn install`;
-- Run `yarn dev` and access `http://localhost:3000`;
-- Run `yarn build` for production build;
+- Clone this repository: `git clone git@github.com:gabrielferreiraa/react-redux-boilerplate.git`
+- Install dependencies: `yarn` or `yarn install`
+- Run `yarn dev` and access `http://localhost:3000`
+- Run `yarn build` for production build
+
+## Scripts
+
+- Run storybook `yarn storybook`
+- Run tests `yarn test` or `yarn test:watch`
+- Run lint `yarn lint` or `yarn lint:watch`
+- Fix lint `yarn lint:fix`
+- Build `yarn build`
 
 ## License
 

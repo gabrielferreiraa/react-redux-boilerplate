@@ -55,15 +55,15 @@ module.exports = {
     use: {
       loader: 'babel-loader',
       options: {
-        presets: [[
-          'env', { modules: false }], 'stage-0', 'react'],
+        presets: [ [
+          'env', { modules: false } ], 'stage-0', 'react' ],
         plugins: [
           'react-hot-loader/babel',
-          ['transform-runtime', {
+          [ 'transform-runtime', {
             helpers: false,
             polyfill: false,
             regenerator: true
-          }]
+          } ]
         ]
       }
     }
@@ -73,28 +73,24 @@ module.exports = {
     rules: [
       {
         test: /\.(css|styl)$/,
-        include: [paths.components, paths.containers],
+        include: [ paths.components, paths.containers ],
         use: [
-          'style-loader', {
+          'style-loader',
+          {
             loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[path][name]__[local]--[hash:base64:5]'
-            }
+            options: { modules: true, localIdentName: '[path][name]__[local]--[hash:base64:5]' }
           },
           {
             loader: 'postcss-loader',
-            options: {
-              sourceMap: true
-            }
+            options: { sourceMap: true }
           },
           'stylus-loader'
         ]
       },
       {
         test: /\.css$/,
-        include: [paths.dist, paths.modules],
-        use: ['style-loader', 'css-loader']
+        include: [ paths.dist, paths.modules ],
+        use: [ 'style-loader', 'css-loader' ]
       }
     ]
   },
@@ -111,7 +107,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.json', '.styl', '.css'],
+    extensions: [ '.js', '.json', '.styl', '.css' ],
     alias: {
       src: paths.src,
       components: join(paths.components),
