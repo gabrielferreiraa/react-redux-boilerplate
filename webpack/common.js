@@ -5,6 +5,8 @@ const { join } = require('path')
 const paths = {
   root: join(__dirname, '..'),
   modules: join(__dirname, '..', 'node_modules'),
+  components: join(__dirname, '..', 'src', 'components'),
+  containers: join(__dirname, '..', 'src', 'containers'),
   src: join(__dirname, '..', 'src'),
   docs: join(__dirname, '..', 'docs'),
   dist: join(__dirname, '..', 'src', 'dist'),
@@ -68,23 +70,32 @@ module.exports = {
   },
 
   cssLoader: {
-    test: /\.(css|styl)$/,
-    include: paths.src,
-    use: [
-      'style-loader', {
-        loader: 'css-loader',
-        options: {
-          modules: true,
-          localIdentName: '[path][name]__[local]--[hash:base64:5]'
-        }
+    rules: [
+      {
+        test: /\.(css|styl)$/,
+        include: [paths.components, paths.containers],
+        use: [
+          'style-loader', {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[path][name]__[local]--[hash:base64:5]'
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          'stylus-loader'
+        ]
       },
       {
-        loader: 'postcss-loader',
-        options: {
-          sourceMap: true
-        }
-      },
-      'stylus-loader'
+        test: /\.css$/,
+        include: [paths.dist, paths.modules],
+        use: ['style-loader', 'css-loader']
+      }
     ]
   },
 
@@ -103,9 +114,9 @@ module.exports = {
     extensions: ['.js', '.json', '.styl', '.css'],
     alias: {
       src: paths.src,
-      components: join(paths.src, 'components'),
+      components: join(paths.components),
       utils: join(paths.src, 'utils'),
-      containers: join(paths.src, 'containers'),
+      containers: join(paths.containers),
       dist: join(paths.src, 'dist'),
       reducers: join(paths.reduxFlow, 'reducers'),
       stores: join(paths.reduxFlow, 'stores'),

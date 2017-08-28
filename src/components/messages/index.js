@@ -1,7 +1,7 @@
 'use strict'
 
 import { toastr } from 'react-redux-toastr'
-import '!style-loader!css-loader!react-redux-toastr/lib/css/react-redux-toastr.min.css'
+import 'react-redux-toastr/lib/css/react-redux-toastr.min.css'
 
 export function success (text) {
   toastr.success('Sucesso', text)
