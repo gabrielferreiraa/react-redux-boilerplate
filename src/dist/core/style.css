@@ -19,7 +19,7 @@ body {
 }
 
 .rrt-middle-container {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-family: Roboto, "Helvetica Neue", Arial, sans-serif !important;
 }
 
 article,
@@ -11175,7 +11175,12 @@ base-chart.chart {
     background: #20a8d8 !important;
 }
 
-.sidebar .nav .nav-item .nav-link:hover i, .sidebar .nav .nav-item .navbar .dropdown-toggle:hover i, .navbar .sidebar .nav .nav-item .dropdown-toggle:hover i {
+.sidebar .nav .nav-item .nav-link:hover i,
+.sidebar .nav .nav-item .navbar .dropdown-toggle:hover i,
+.navbar .sidebar .nav .nav-item .dropdown-toggle:hover i,
+.sidebar .nav .nav-item .nav-link:hover span,
+.sidebar .nav .nav-item .navbar .dropdown-toggle:hover span,
+.navbar .sidebar .nav .nav-item .dropdown-toggle:hover span{
     color: #FFF !important;
 }
 
@@ -11184,7 +11189,12 @@ base-chart.chart {
     background: #304047;
 }
 
-.sidebar .nav .nav-item .nav-link.active i, .sidebar .nav .nav-item .navbar .active.dropdown-toggle i, .navbar .sidebar .nav .nav-item .active.dropdown-toggle i {
+.sidebar .nav .nav-item .nav-link.active i,
+.sidebar .nav .nav-item .navbar .active.dropdown-toggle i,
+.navbar .sidebar .nav .nav-item .active.dropdown-toggle i,
+.sidebar .nav .nav-item .nav-link.active span,
+.sidebar .nav .nav-item .navbar .active.dropdown-toggle span,
+.navbar .sidebar .nav .nav-item .active.dropdown-toggle span{
     color: #20a8d8;
 }
 
@@ -11194,7 +11204,12 @@ base-chart.chart {
     vertical-align: middle;
 }
 
-.sidebar .nav .nav-item .nav-link i, .sidebar .nav .nav-item .navbar .dropdown-toggle i, .navbar .sidebar .nav .nav-item .dropdown-toggle i {
+.sidebar .nav .nav-item .nav-link i,
+.sidebar .nav .nav-item .navbar .dropdown-toggle i,
+.navbar .sidebar .nav .nav-item .dropdown-toggle i,
+.sidebar .nav .nav-item .nav-link span,
+.sidebar .nav .nav-item .navbar .dropdown-toggle span,
+.navbar .sidebar .nav .nav-item .dropdown-toggle span{
     width: 20px;
     margin: 0 0.5rem 0 0;
     font-size: 14px;

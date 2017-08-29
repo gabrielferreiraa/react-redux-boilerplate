@@ -5,13 +5,13 @@ const data = {
     {
       id: 1,
       text: 'Dashboard',
-      icon: 'icon-speedometer',
+      icon: 'dashboard',
       route: '/dashboard',
       parent: false
     }, {
       id: 2,
       text: 'Participantes',
-      icon: 'icon-user',
+      icon: 'user',
       route: '',
       parent: true,
       children: [
