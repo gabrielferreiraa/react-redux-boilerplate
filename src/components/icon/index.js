@@ -1,10 +1,10 @@
 'use strict'
 
 import React from 'react'
-import FontAwesome from 'react-fontawesome'
 import { string } from 'prop-types'
+import 'font-awesome/css/font-awesome.min'
 
-const Icon = ({ className, ...params }) => <FontAwesome name={className} {...params} />
+const Icon = ({ className, ...params }) => <i className={className} {...params} />
 
 Icon.defaultProps = {
   className: 'star'

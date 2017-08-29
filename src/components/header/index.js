@@ -1,6 +1,10 @@
 'use strict'
 
 import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { toggle } from 'reducers/sidebar/action-creators'
+
 import { Dropdown, DropdownMenu, DropdownItem } from 'reactstrap'
 
 class Header extends Component {
@@ -8,6 +12,7 @@ class Header extends Component {
     super(props)
 
     this.toggle = this.toggle.bind(this)
+    this.sidebarToggle = this.sidebarToggle.bind(this)
     this.state = {
       dropdownOpen: false
     }
@@ -20,8 +25,7 @@ class Header extends Component {
   }
 
   sidebarToggle (e) {
-    e.preventDefault()
-    document.body.classList.toggle('sidebar-hidden')
+    this.props.toggle()
   }
 
   fullscreenToggle (e) {
@@ -141,4 +145,5 @@ class Header extends Component {
   }
 }
 
-export default Header
+const mapDispatchToProps = dispatch => bindActionCreators({ toggle }, dispatch)
+export default connect(null, mapDispatchToProps)(Header)

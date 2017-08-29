@@ -12,14 +12,14 @@ const Edit = ({ router, id }) => (
   <Link
     to={`/${router}/editar/${id}`}>
     <button type='button' title='Editar' className='btn btn-warning btn-sm'>
-      <Icon className='icon-pencil' />
+      <Icon className='fa fa-pencil' />
     </button>
   </Link>
 )
 
 const Delete = () => (
   <button type='button' title='Excluir' className='btn btn-danger btn-sm'>
-    <Icon className='icon-trash' />
+    <Icon className='fa fa-trash' />
   </button>
 )
 

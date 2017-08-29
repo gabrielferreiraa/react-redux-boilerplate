@@ -97,11 +97,11 @@ module.exports = {
 
   fileLoader: {
     test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|txt)(\?.*)?$/,
-    include: paths.src,
+    include: [ paths.src, paths.modules ],
     use: {
       loader: 'file-loader',
       options: {
-        name: 'media/[name].[hash:8].[ext]'
+        name: 'media/[hash:12].[ext]'
       }
     }
   },

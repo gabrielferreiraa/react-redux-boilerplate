@@ -2,6 +2,10 @@
 
 import React, { Component } from 'react'
 import { TabContent, TabPane, Nav, NavItem, NavLink, Progress } from 'reactstrap'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { toggle } from 'reducers/sidebar/action-creators'
+
 import classnames from 'classnames'
 
 class Aside extends Component {
@@ -206,19 +210,16 @@ class Aside extends Component {
             </div>
           </TabPane>
           <TabPane tabId='3' className='p-3'>
-            <h6>Settings</h6>
+            <h6>Configurações</h6>
 
             <div className='aside-options'>
               <div className='clearfix mt-4'>
-                <small><b>Option 1</b></small>
+                <small><b>Barra Lateral Visível</b></small>
                 <label className='switch switch-text switch-pill switch-success switch-sm float-right'>
-                  <input type='checkbox' className='switch-input' defaultChecked />
+                  <input type='checkbox' className='switch-input' checked={this.props.sidebarOpen} onChange={() => this.props.toggle()} />
                   <span className='switch-label' data-on='On' data-off='Off' />
                   <span className='switch-handle' />
                 </label>
-              </div>
-              <div>
-                <small className='text-muted'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
               </div>
             </div>
 
@@ -283,4 +284,7 @@ class Aside extends Component {
   }
 }
 
-export default Aside
+const mapStateToProps = state => ({ sidebarOpen: state.sidebar.open })
+const mapDispatchToProps = dispatch => bindActionCreators({ toggle }, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Aside)
