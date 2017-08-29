@@ -11,11 +11,12 @@ class Header extends Component {
   constructor (props) {
     super(props)
 
-    this.toggle = this.toggle.bind(this)
-    this.sidebarToggle = this.sidebarToggle.bind(this)
     this.state = {
       dropdownOpen: false
     }
+
+    this.toggle = this.toggle.bind(this)
+    this.sidebarToggle = this.sidebarToggle.bind(this)
   }
 
   toggle () {
@@ -85,21 +86,27 @@ class Header extends Component {
               onClick={this.sidebarToggle}>&#9776;</button>
           </li>
           <li className='nav-item'>
-            <button className='nav-link' type='button' onClick={this.fullscreenToggle}>
-              <i className='icon-size-fullscreen' />
+            <button className='nav-link' type='button' title='Fullscreen' onClick={this.fullscreenToggle}>
+              <i className='fa fa-expand' />
             </button>
           </li>
         </ul>
         <ul className='nav navbar-nav ml-auto'>
           <li className='nav-item d-md-down-none'>
-            <a className='nav-link' href='#'><i className='icon-bell' /><span
-              className='badge badge-pill badge-danger'>5</span></a>
+            <a className='nav-link' href='#'>
+              <i className='fa fa-bell-o' />
+              <span className='badge badge-pill badge-danger'>5</span>
+            </a>
           </li>
           <li className='nav-item d-md-down-none'>
-            <a className='nav-link' href='#'><i className='icon-list' /></a>
+            <a className='nav-link' href='#'>
+              <i className='fa fa-map-marker' />
+            </a>
           </li>
           <li className='nav-item d-md-down-none'>
-            <a className='nav-link' href='#'><i className='icon-location-pin' /></a>
+            <a className='nav-link' href='#'>
+              <i className='fa fa-sign-out' />
+            </a>
           </li>
           <li className='nav-item'>
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
@@ -130,7 +137,6 @@ class Header extends Component {
                   className='badge badge-primary'>42</span></DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem><i className='fa fa-shield' /> Lock Account</DropdownItem>
-                <DropdownItem><i className='fa fa-lock' /> Logout</DropdownItem>
 
               </DropdownMenu>
             </Dropdown>
