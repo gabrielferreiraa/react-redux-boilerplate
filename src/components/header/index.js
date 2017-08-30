@@ -104,9 +104,9 @@ class Header extends Component {
             </a>
           </li>
           <li className='nav-item d-md-down-none'>
-            <a className='nav-link' href='#'>
+            <button type='button' className='nav-link'>
               <i className='fa fa-sign-out' />
-            </a>
+            </button>
           </li>
           <li className='nav-item'>
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
