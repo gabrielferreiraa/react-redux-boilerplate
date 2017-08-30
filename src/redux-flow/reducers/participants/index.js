@@ -3,7 +3,7 @@
 import { handleActions } from 'redux-actions'
 import * as action from './actions'
 
-const initialState = { list: [], isFetching: false }
+export const initialState = { list: [], isFetching: false }
 
 const handlers = {
   [action.FETCHING]: (state, action) => ({ ...state, isFetching: true }),

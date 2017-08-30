@@ -12,6 +12,15 @@
     "storybook": "start-storybook -p 9001 -c storybook",
     "build-storybook": "build-storybook -c storybook"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|styl)$": "<rootDir>/__mocks__/styleMock.js",
+      "^src(.*)$": "<rootDir>/src$1",
+      "^utils(.*)$": "<rootDir>/src/utils$1",
+      "^components(.*)$": "<rootDir>/src/components$1"
+    }
+  },
   "devDependencies": {
     "@kadira/storybook": "2.35.3",
     "autoprefixer": "7.1.1",
