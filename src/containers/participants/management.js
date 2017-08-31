@@ -1,7 +1,8 @@
 'use strict'
 
 import React, { Component } from 'react'
-import HeaderFilters from 'components/header-filters'
+import HeaderManagement from 'components/header-management'
+import Filters from 'components/filters'
 import style from './css/management'
 import TableGenerator from 'components/table-generator'
 import { fetch } from 'reducers/participants/action-creators'
@@ -19,6 +20,10 @@ class Management extends Component {
         { id: '#' },
         { login: 'Login' },
         { html_url: 'URL' }
+      ],
+      filters: [
+        { component: 'input', placeholder: 'Pesquise por Nome ou CPF', label: 'Nome ou CPF' },
+        { component: 'select', placeholder: 'Selecione o estabelecimento', label: 'Estabelecimento', data: { 321: 'Gabriel', 21: 'Fernando' } }
       ]
     }
   }
@@ -28,14 +33,20 @@ class Management extends Component {
   }
 
   render () {
+    const { filters, headers } = this.state
+
     return (
       <div>
-        <HeaderFilters />
+        <HeaderManagement />
+        {filters && <Filters filters={filters} />}
         <div className='animated fadeIn'>
           <div className={`${style.cardDataTable} card`}>
-            <input type='text' className={`form-control ${style.searchInput}`} placeholder='Busca' />
+            <div>
+              <button className='btn btn-success'>Cadastrar Participante</button>
+            </div>
+            <input type='text' className={`form-control ${style.searchInput}`} placeholder='&#xf002; Busca' />
             <TableGenerator
-              indicators={this.state.headers}
+              indicators={headers}
               data={this.props.participants}
               router='participantes'
               edit

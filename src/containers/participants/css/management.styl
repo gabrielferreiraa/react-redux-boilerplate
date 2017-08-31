@@ -6,6 +6,11 @@
   padding: 15px
 
   .searchInput
-    margin-bottom 10px
-    float right
+    position absolute
+    right 15px
     width 200px
+    font-family FontAwesome, $font
+    transition width 100ms ease
+    will-change width
+    &:focus
+      width 240px

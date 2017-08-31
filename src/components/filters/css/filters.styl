@@ -1,0 +1,38 @@
+@import '~css/default'
+
+$widthAside = 300px
+
+.btnFilterToggle
+    position absolute
+    top 125px
+    right 15px
+    transition top 100ms ease
+
+    &.open
+        top 60px
+
+.filterContent
+    background $grey
+    width $widthAside
+    position fixed
+    transform translateX($widthAside)
+    top 100px
+    right 0
+    height 100%
+    z-index 99
+    border-left 1px solid #cfd8dc
+    padding 10px
+    transition transform 150ms ease
+    will-change transform
+
+    &.open
+        transform translateX(0)
+
+    .sectionFilter
+        margin-top 20px
+
+        .labelFilter
+            color rgb(185, 185, 185)
+
+    .btnFilter
+        margin-top 20px
