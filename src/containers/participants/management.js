@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import HeaderManagement from 'components/header-management'
 import Filters from 'components/filters'
 import style from './css/management'
+import Icon from 'components/icon'
 import TableGenerator from 'components/table-generator'
 import { fetch } from 'reducers/participants/action-creators'
 import PaginationWithText from 'components/pagination/text'
@@ -42,7 +43,10 @@ class Management extends Component {
         <div className='animated fadeIn'>
           <div className={`${style.cardDataTable} card`}>
             <div>
-              <button className='btn btn-success'>Cadastrar Participante</button>
+              <button className='btn btn-success'>
+              <Icon className='fa fa-plus' />
+                &nbsp;Cadastrar Participante
+              </button>
             </div>
             <input type='text' className={`form-control ${style.searchInput}`} placeholder='&#xf002; Busca' />
             <TableGenerator
