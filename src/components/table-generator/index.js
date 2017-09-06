@@ -41,7 +41,7 @@ class TableGenerator extends Component {
             </tr>
           </thead>
           <tbody>
-          {data.map((row, index) => (
+            {data.map((row, index) => (
               <tr key={index}>
                 {indicators.map((item, index) => <td key={index}>{row[Object.keys(item)]}</td>)}
                 <td className={style.action}>

@@ -5,8 +5,8 @@ import HeaderManagement from 'components/header-management'
 import Filters from 'components/filters'
 import style from './css/management'
 import Icon from 'components/icon'
+import SearchInput from 'components/search-input'
 import TableGenerator from 'components/table-generator'
-import { Link } from 'react-router-dom'
 import { fetch } from 'reducers/participants/action-creators'
 import PaginationWithText from 'components/pagination/text'
 
@@ -45,34 +45,11 @@ class Management extends Component {
   render () {
     const { filters, headers } = this.state
 
-    const View = ({ id }) => (
-      <Link
-        to={`/participants/visualizar/${id}`}>
-        <button type='button' title='Visualizar' className='btn btn-success btn-sm'>
-          <Icon className='fa fa-street-view' />
-        </button>
-      </Link>
-    )
-
-    const Xlsx = () => (
-      <button type='button' title='Excel' onClick={() => alert('a')} className='btn btn-info btn-sm'>
-        <Icon className='fa fa-file-excel-o' />
-      </button>
-    )
-
-    const Actions = ({ id, ...params }) => (
-      <span>
-        <View id={id} />
-        <Xlsx id={id} />
-      </span>
-    )
-
     const responseData = () => (
-      this.props.participants.map(user => ({
-        id: user.id,
-        login: user.login,
-        html_url: user.html_url,
-        actions: () => <Actions id={user.id} />
+      this.props.participants.map(v => ({
+        id: v.id,
+        login: v.login,
+        html_url: v.html_url
       }))
     )
 
@@ -88,7 +65,7 @@ class Management extends Component {
                 &nbsp;Cadastrar Participante
               </button>
             </div>
-            <input type='text' className={`form-control ${style.searchInput}`} placeholder='&#xf002; Busca' />
+            <SearchInput />
             <TableGenerator
               indicators={headers}
               data={responseData()}
