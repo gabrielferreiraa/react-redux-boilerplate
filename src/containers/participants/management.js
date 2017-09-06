@@ -6,6 +6,7 @@ import Filters from 'components/filters'
 import style from './css/management'
 import Icon from 'components/icon'
 import TableGenerator from 'components/table-generator'
+import { Link } from 'react-router-dom'
 import { fetch } from 'reducers/participants/action-creators'
 import PaginationWithText from 'components/pagination/text'
 
@@ -23,8 +24,16 @@ class Management extends Component {
         { html_url: 'URL' }
       ],
       filters: [
-        { component: 'input', placeholder: 'Pesquise por Nome ou CPF', label: 'Nome ou CPF' },
-        { component: 'select', placeholder: 'Selecione o estabelecimento', label: 'Estabelecimento', data: { 321: 'Gabriel', 21: 'Fernando' } }
+        {
+          component: 'input',
+          placeholder: 'Pesquise por Nome ou CPF',
+          label: 'Nome ou CPF'
+        }, {
+          component: 'select',
+          placeholder: 'Selecione o estabelecimento',
+          label: 'Estabelecimento',
+          data: { 321: 'Gabriel', 21: 'Fernando' }
+        }
       ]
     }
   }
@@ -36,6 +45,37 @@ class Management extends Component {
   render () {
     const { filters, headers } = this.state
 
+    const View = ({ id }) => (
+      <Link
+        to={`/participants/visualizar/${id}`}>
+        <button type='button' title='Visualizar' className='btn btn-success btn-sm'>
+          <Icon className='fa fa-street-view' />
+        </button>
+      </Link>
+    )
+
+    const Xlsx = () => (
+      <button type='button' title='Excel' onClick={() => alert('a')} className='btn btn-info btn-sm'>
+        <Icon className='fa fa-file-excel-o' />
+      </button>
+    )
+
+    const Actions = ({ id, ...params }) => (
+      <span>
+        <View id={id} />
+        <Xlsx id={id} />
+      </span>
+    )
+
+    const responseData = () => (
+      this.props.participants.map(user => ({
+        id: user.id,
+        login: user.login,
+        html_url: user.html_url,
+        actions: () => <Actions id={user.id} />
+      }))
+    )
+
     return (
       <div>
         <HeaderManagement />
@@ -44,14 +84,14 @@ class Management extends Component {
           <div className={`${style.cardDataTable} card`}>
             <div>
               <button className='btn btn-success'>
-              <Icon className='fa fa-plus' />
+                <Icon className='fa fa-plus' />
                 &nbsp;Cadastrar Participante
               </button>
             </div>
             <input type='text' className={`form-control ${style.searchInput}`} placeholder='&#xf002; Busca' />
             <TableGenerator
               indicators={headers}
-              data={this.props.participants}
+              data={responseData()}
               router='participantes'
               edit
               del
