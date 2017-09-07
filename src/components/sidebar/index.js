@@ -14,60 +14,61 @@ class Sidebar extends Component {
   constructor (props) {
     super(props)
 
-    this.handleClick = this.handleClick.bind(this)
-    this.activateRoute = this.activateRoute.bind(this)
-    this.renderMenus = this.renderMenus.bind(this)
+    this._handleClick = this._handleClick.bind(this)
+    this._activateTreeRoute = this._activateTreeRoute.bind(this)
+    this._activateSingleRoute = this._activateSingleRoute.bind(this)
+    this._renderMenus = this._renderMenus.bind(this)
   }
 
-  handleClick (e) {
+  _handleClick (e) {
     e.preventDefault()
     e.target.parentElement.classList.toggle('open')
   }
 
-  activateRoute (routeName) {
+  _activateTreeRoute (routeName) {
     const activeMenu = this.props.menus.filter(menu => {
       return menu.parent
         ? menu.children.filter(menu => menu.route === this.props.location.pathname)
         : menu.route === this.props.location.pathname
     })
 
-    if (typeof activeMenu[0] !== 'undefined') {
-      this.props.select(activeMenu[0])
-    }
+    !!activeMenu[0] && this.props.select(activeMenu[0])
 
-    if (routeName === '') {
-      return 'nav-item nav-dropdown'
-    }
+    if (routeName === '') return 'nav-item nav-dropdown'
 
     return this.props.location.pathname.includes(routeName) ? 'nav-item nav-dropdown open' : 'nav-item nav-dropdown'
   }
 
-  renderMenus (menus) {
-    return menus.map((item, index) => {
-      return item.parent === false
-              ? <MenuItem {...item} key={index} />
-              : <MenuTree
-                activeRoute={this.activateRoute}
-                handleClick={this.handleClick}
-                item={item}
-                key={index}
-                />
-    })
+  _activateSingleRoute (routeName) {
+    const activeMenu = this.props.menus.filter(menu => menu.route === routeName)
+    !!activeMenu[0] && this.props.select(activeMenu[0])
   }
 
-  componentWillMount () {
+  _renderMenus (menus = []) {
+    return menus.map((item, index) => (
+      item.parent === false
+        ? <MenuItem {...item} activeRoute={this._activateSingleRoute} key={index} />
+        : <MenuTree
+          activeRoute={this._activateTreeRoute}
+          activateSingleRoute={this._activateSingleRoute}
+          handleClick={this._handleClick}
+          item={item}
+          key={index}
+      />
+    ))
+  }
+
+  componentDidMount () {
     this.props.fetch()
   }
 
   render () {
-    const { menus } = this.props || []
-
     return (
       <div className='sidebar'>
         <nav className='sidebar-nav'>
           <input type='text' className={style.filterMenus} placeholder='Filtrar menus' onChange={this.props.search} />
           <ul className='nav'>
-            {this.renderMenus(menus)}
+            {this._renderMenus(this.props.menus)}
           </ul>
         </nav>
       </div>
@@ -77,5 +78,4 @@ class Sidebar extends Component {
 
 const mapStateToProps = state => ({ menus: state.sidebar.menus })
 const mapDispatchToProps = dispatch => bindActionCreators({ fetch, search, select }, dispatch)
-
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)
