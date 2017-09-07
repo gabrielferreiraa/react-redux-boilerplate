@@ -18,9 +18,8 @@ class Filters extends Component {
 
     return (
       <div>
-        <button className={`btn btn-info ${style.btnFilterToggle} ${this.state.open ? style.open : ''}`} onClick={() => this.setState({ open: !this.state.open })}>
-          <Icon className='fa fa-filter' />
-          &nbsp;Filtros
+        <button className={`btn btn-info ${style.btnFilterToggle} ${this.state.open ? style.open : style.close}`} onClick={() => this.setState({ open: !this.state.open })}>
+          <Icon className={!this.state.open ? `fa fa-filter` : `fa fa-times`} />
         </button>
         <aside className={`${style.filterContent} ${this.state.open ? style.open : ''}`}>
           {filters.map((item, index) => {
