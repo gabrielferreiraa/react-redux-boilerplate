@@ -34,18 +34,20 @@ const Pagination = () => (
   />
 )
 
-const Refresh = () => (
-  <div className={`btn-group ${style.dataActions}`} role='group'>
-    <button className='btn btn-outline-success btn-sm'>
-      <Icon className='fa fa-refresh' />
-    </button>
-  </div>
-)
+const Refresh = ({ fetch }) => {
+  return (
+    <div className={`btn-group ${style.dataActions}`} role='group'>
+      <button className='btn btn-outline-success btn-sm' onClick={fetch}>
+        <Icon className='fa fa-refresh' />
+      </button>
+    </div>
+  )
+}
 
 const ContentManagement = ({ ...params }) => (
   <Content>
     {params.searchInput && <SearchInput />}
-    {params.refresh && <Refresh />}
+    {params.refresh && <Refresh fetch={params.refresh.fetch} />}
     {params.table && <TableGeneratorResult table={params.table} />}
     {params.pagination && <Pagination />}
   </Content>

@@ -70,6 +70,10 @@ class Management extends Component {
       open: this.state.filterOpen
     }
 
+    const refresh = {
+      fetch: this.props.fetch
+    }
+
     const BtnFilter = () => (
       <ButtonInfo
         onClick={() => this.setState({ filterOpen: !this.state.filterOpen })}
@@ -90,7 +94,7 @@ class Management extends Component {
         />
         <ContentManagement
           table={table}
-          refresh
+          refresh={refresh}
           searchInput
           pagination
         />
