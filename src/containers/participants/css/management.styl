@@ -5,6 +5,24 @@
   right 65px
   top 123px
 
+.btnFilterToggle
+  position absolute
+  width 35px
+  height 35px
+  align-items center
+  justify-content center
+  display flex
+  top 123px
+  right 15px
+  transition top 100ms ease
+
+  &.open
+    top 60px
+    border-radius 0
+
+  &.close
+    border-radius 50%
+
 .dataActions
   position absolute
   display flex

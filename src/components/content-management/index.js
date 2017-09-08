@@ -1,10 +1,8 @@
 'use strict'
 
 import React from 'react'
-import HeaderManagement from 'components/header-management'
 import Icon from 'components/icon'
 import TableGenerator from 'components/table-generator'
-import Filters from 'components/filters'
 import SearchInput from 'components/search-input'
 import PaginationWithText from 'components/pagination/text'
 
@@ -36,27 +34,21 @@ const Pagination = () => (
   />
 )
 
-const ContentManagement = ({ ...params }) => (
-  <div>
-    {params.headerManagement && <HeaderManagement />}
-    <div>
-      <button className={`btn btn-success ${style.addBtn}`}>
-        <Icon className='fa fa-plus-circle' />
-        &nbsp;Criar
-      </button>
-    </div>
-    {params.filters && <Filters filters={params.filters} />}
-    <Content>
-      {params.searchInput && <SearchInput />}
-      <div className={`btn-group ${style.dataActions}`} role='group'>
-        <button className='btn btn-outline-success btn-sm'>
-          <Icon className='fa fa-refresh' />
-        </button>
-      </div>
-      {params.table && <TableGeneratorResult table={params.table} />}
-      {params.pagination && <Pagination />}
-    </Content>
+const Refresh = () => (
+  <div className={`btn-group ${style.dataActions}`} role='group'>
+    <button className='btn btn-outline-success btn-sm'>
+      <Icon className='fa fa-refresh' />
+    </button>
   </div>
+)
+
+const ContentManagement = ({ ...params }) => (
+  <Content>
+    {params.searchInput && <SearchInput />}
+    {params.refresh && <Refresh />}
+    {params.table && <TableGeneratorResult table={params.table} />}
+    {params.pagination && <Pagination />}
+  </Content>
 )
 
 export default ContentManagement

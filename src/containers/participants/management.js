@@ -1,9 +1,15 @@
 'use strict'
 
 import React, { Component } from 'react'
+import HeaderManagement from 'components/header-management'
+import Filters from 'components/filters'
 import ContentManagement from 'components/content-management'
-import { fetch } from 'reducers/participants/action-creators'
+import Icon from 'components/icon'
+import CreateButton from 'components/create-button'
+import style from './css/management'
+import { ButtonInfo } from 'components/button'
 
+import { fetch } from 'reducers/participants/action-creators'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
@@ -12,6 +18,8 @@ class Management extends Component {
     super(props)
 
     this.state = {
+      filterOpen: false,
+      route: 'participantes',
       headers: [
         { id: '#' },
         { login: 'Login' },
@@ -34,10 +42,11 @@ class Management extends Component {
 
   componentDidMount () {
     this.props.fetch()
+    document.addEventListener('scroll', () => this.state.filterOpen && this.setState({ filterOpen: false }))
   }
 
   render () {
-    const { filters, headers } = this.state
+    const { headers } = this.state
     const { participants } = this.props
 
     const responseData = () => (
@@ -51,19 +60,41 @@ class Management extends Component {
     const table = {
       headers: headers,
       response: responseData,
-      router: 'participantes',
+      router: this.state.route,
       edit: true,
       del: true
     }
 
+    const filters = {
+      content: this.state.filters,
+      open: this.state.filterOpen
+    }
+
+    const BtnFilter = () => (
+      <ButtonInfo
+        onClick={() => this.setState({ filterOpen: !this.state.filterOpen })}
+        className={`${style.btnFilterToggle} ${filters.open ? style.open : style.close}`}>
+        <Icon className={!filters.open ? `fa fa-filter` : `fa fa-times`} />
+      </ButtonInfo>
+    )
+
     return (
-      <ContentManagement
-        filters={filters}
-        table={table}
-        headerManagement
-        searchInput
-        pagination
-      />
+      <div>
+        <HeaderManagement />
+        <BtnFilter />
+        <Filters
+          filters={filters}
+        />
+        <CreateButton
+          route={this.state.route}
+        />
+        <ContentManagement
+          table={table}
+          refresh
+          searchInput
+          pagination
+        />
+      </div>
     )
   }
 }

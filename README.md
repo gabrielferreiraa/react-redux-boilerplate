@@ -16,7 +16,7 @@
 * React Router 4
 * Storybook
 * Jest and Chai (TDD)
-* [Ducks](https://github.com/erikras/ducks-modular-redux)- Redux Reducer Bundles
+* [Ducks](https://github.com/erikras/ducks-modular-redux) - Redux Reducer Bundles
 
 ## Up and running
 
