@@ -38,11 +38,17 @@ class Management extends Component {
         }
       ]
     }
+
+    this._hideFilter = this._hideFilter.bind(this)
+  }
+
+  _hideFilter () {
+    this.state.filterOpen && this.setState({ filterOpen: false })
   }
 
   componentDidMount () {
     this.props.fetch()
-    document.addEventListener('scroll', () => this.state.filterOpen && this.setState({ filterOpen: false }))
+    document.addEventListener('scroll', this._hideFilter)
   }
 
   render () {
