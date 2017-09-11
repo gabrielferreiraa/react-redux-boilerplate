@@ -2,21 +2,23 @@
 
 import * as action from './actions'
 import { request } from 'utils/ws-client'
-import { error } from 'components/messages'
+import { error as alertError } from 'components/messages'
 
 export const edit = values => ({ type: action.EDIT, payload: '' })
 export const add = values => ({ type: action.ADD, payload: '' })
+const fetching = () => ({ type: action.FETCHING })
+const error = () => ({ type: action.ERROR })
 export const fetch = () => (dispatch, getState) => {
   const hasRequest = getState().participants.isFetching
 
   if (!hasRequest) {
-    dispatch({ type: action.FETCHING })
+    dispatch(fetching())
 
     request({ method: 'GET' })
       .then(resp => dispatch({ type: action.SUCCESS, payload: resp.data }))
       .catch(() => {
-        error('Houve um problema ao buscar informações')
-        return dispatch({ type: action.ERROR })
+        alertError('Houve um problema ao buscar informações')
+        return dispatch(error())
       })
   }
 }

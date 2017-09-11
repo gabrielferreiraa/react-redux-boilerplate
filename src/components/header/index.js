@@ -1,11 +1,12 @@
 'use strict'
 
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
+import { Dropdown, DropdownMenu, DropdownItem } from 'reactstrap'
+
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { toggle } from 'reducers/sidebar/action-creators'
-
-import { Dropdown, DropdownMenu, DropdownItem } from 'reactstrap'
 
 class Header extends Component {
   constructor (props) {
@@ -152,4 +153,4 @@ class Header extends Component {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({ toggle }, dispatch)
-export default connect(null, mapDispatchToProps)(Header)
+export default connect(null, mapDispatchToProps)(withRouter(Header))

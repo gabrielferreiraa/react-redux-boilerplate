@@ -11,7 +11,7 @@ const data = {
     }, {
       id: 2,
       text: 'Participantes',
-      icon: 'fa fa-user',
+      icon: 'fa fa-users',
       route: '/participantes',
       parent: false
     }
