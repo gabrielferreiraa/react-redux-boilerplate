@@ -13,20 +13,28 @@ class Header extends Component {
     super(props)
 
     this.state = {
-      dropdownOpen: false
+      actionsOpen: false,
+      alertsOpen: false
     }
 
     this.toggle = this.toggle.bind(this)
+    this.toggleAlert = this.toggleAlert.bind(this)
     this.sidebarToggle = this.sidebarToggle.bind(this)
   }
 
   toggle () {
     this.setState({
-      dropdownOpen: !this.state.dropdownOpen
+      actionsOpen: !this.state.actionsOpen
     })
   }
 
-  sidebarToggle (e) {
+  toggleAlert () {
+    this.setState({
+      alertsOpen: !this.state.alertsOpen
+    })
+  }
+
+  sidebarToggle () {
     this.props.toggle()
   }
 
@@ -94,10 +102,26 @@ class Header extends Component {
         </ul>
         <ul className='nav navbar-nav ml-auto'>
           <li className='nav-item d-md-down-none'>
-            <a className='nav-link' href='#'>
+            <button onClick={this.toggleAlert} className='nav-link' data-toggle='dropdown' type='button' aria-haspopup='true' aria-expanded={this.state.alertsOpen}>
               <i className='fa fa-bell-o' />
               <span className='badge badge-pill badge-danger'>5</span>
-            </a>
+            </button>
+            <Dropdown isOpen={this.state.alertsOpen} toggle={this.toggleAlert}>
+              <DropdownMenu className='dropdown-menu-right'>
+                <DropdownItem>
+                  <div className='callout callout-success m-0 py-3'>
+                    <div>General Report success</div>
+                    <small className='text-muted'><i className='fa fa-calendar' />15:28</small>
+                  </div>
+                </DropdownItem>
+                <DropdownItem>
+                  <div className='callout callout-error m-0 py-3'>
+                    <div>Report Failure</div>
+                    <small className='text-muted'><i className='fa fa-calendar' />15:28</small>
+                  </div>
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
           </li>
           <li className='nav-item d-md-down-none'>
             <a className='nav-link' href='#'>
@@ -110,9 +134,9 @@ class Header extends Component {
             </button>
           </li>
           <li className='nav-item'>
-            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+            <Dropdown isOpen={this.state.actionsOpen} toggle={this.toggle}>
               <button onClick={this.toggle} className='nav-link dropdown-toggle' data-toggle='dropdown' type='button'
-                aria-haspopup='true' aria-expanded={this.state.dropdownOpen}>
+                aria-haspopup='true' aria-expanded={this.state.actionsOpen}>
                 <img src={'/public/img/avatars/6.jpg'} className='img-avatar' alt='admin@bootstrapmaster.com' />
                 <span className='d-md-down-none'>admin</span>
               </button>

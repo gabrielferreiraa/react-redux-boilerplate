@@ -22,6 +22,7 @@ class Management extends Component {
       route: 'participantes',
       headers: [
         { id: '#' },
+        { avatar_url: 'Foto' },
         { login: 'Login' },
         { html_url: 'URL' }
       ],
@@ -58,6 +59,7 @@ class Management extends Component {
     const responseData = () => (
       participants.map(v => ({
         id: v.id,
+        avatar_url: { type: 'picture', value: v.avatar_url },
         login: v.login,
         html_url: v.html_url
       }))

@@ -43,7 +43,18 @@ class TableGenerator extends Component {
           <tbody>
             {data.map((row, index) => (
               <tr key={index}>
-                {indicators.map((item, index) => <td key={index}>{row[Object.keys(item)]}</td>)}
+                {indicators.map((item, index) => {
+                  if (row[Object.keys(item)].type) {
+                    switch (row[Object.keys(item)].type) {
+                      case 'picture':
+                        return <td key={index}><img src={row[Object.keys(item)].value} className={style.imageField} /></td>
+                      default:
+                        return <td key={index}>{row[Object.keys(item)].value}</td>
+                    }
+                  }
+
+                  return <td key={index}>{row[Object.keys(item)]}</td>
+                })}
                 <td className={style.action}>
                   {props.edit && <Edit router={router} id={row.id} />}
                   {props.del && <Delete />}
