@@ -5,11 +5,11 @@ import { request } from 'utils/ws-client'
 import { URL_LOGIN } from 'src/constants'
 import { error as alertError } from 'components/messages'
 
-const requestLogin = creds => ({
+const requestLogin = data => ({
   type: action.REQUEST,
   isFetching: true,
   isAuthenticated: false,
-  creds
+  data
 })
 
 const receiveLogin = user => ({
@@ -26,16 +26,16 @@ const errorLogin = message => ({
   message
 })
 
-export const login = creds => {
+export const login = data => {
 
   let config = {
     method: 'POST',
     url: URL_LOGIN,
-    data: { email: 'teste', password: 'senha' }
+    data
   }
 
   return dispatch => {
-    dispatch(requestLogin(creds))
+    dispatch(requestLogin(data))
 
     return request(config)
       .then(resp => {

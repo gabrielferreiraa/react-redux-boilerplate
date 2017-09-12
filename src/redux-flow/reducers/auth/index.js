@@ -10,7 +10,7 @@ const handlers = {
     ...state,
     isFetching: true,
     isAuthenticated: false,
-    user: action.creds
+    user: action.data
   }),
   [action.SUCCESS]: (state, action) => ({
     ...state,

@@ -8,6 +8,15 @@ import { connect } from 'react-redux'
 import { login } from 'reducers/auth/action-creators'
 
 class Login extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      email: '',
+      password: ''
+    }
+  }
+
   componentWillMount () {
     document.body.classList.add(style.backgroundCity)
   }
@@ -31,15 +40,15 @@ class Login extends Component {
                       <p className='text-muted'>Faça login com sua conta</p>
                       <div className='input-group mb-3'>
                         <span className='input-group-addon'><i className='icon-user' /></span>
-                        <input type='text' className='form-control' placeholder='Usuário' />
+                        <input type='text' className='form-control' placeholder='Usuário' onChange={e => this.setState({ email: e.target.value })} />
                       </div>
                       <div className='input-group mb-4'>
                         <span className='input-group-addon'><i className='icon-lock' /></span>
-                        <input type='password' className='form-control' placeholder='Senha' />
+                        <input type='password' className='form-control' placeholder='Senha' onChange={e => this.setState({ password: e.target.value })} />
                       </div>
                       <div className='row'>
                         <div className='col-6'>
-                          <button type='button' className='btn btn-primary px-4' onClick={() => this.props.login()} >Login</button>
+                          <button type='button' className='btn btn-primary px-4' onClick={() => this.props.login(this.state)} >Login</button>
                         </div>
                         <div className='col-6 text-right'>
                           <button type='button' className='btn btn-link px-0'>Esqueceu a senha ?</button>

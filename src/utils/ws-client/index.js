@@ -7,6 +7,6 @@ export const request = ({ method, url = URL_API, ...options }) => {
   return axios({
     method: method.toLowerCase(),
     url,
-    options
+    ...options
   })
 }
