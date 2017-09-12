@@ -3,4 +3,10 @@
 import { URL_API } from 'src/constants'
 import axios from 'axios'
 
-export const request = ({ method, ...options }) => axios[method.toLowerCase()](URL_API)
+export const request = ({ method, url = URL_API, ...options }) => {
+  return axios({
+    method: method.toLowerCase(),
+    url,
+    options
+  })
+}

@@ -3,8 +3,8 @@
 import React from 'react'
 import { string, func } from 'prop-types'
 
-const Button = ({ children, className, onClick }) => (
-  <button type='button' className={`btn ${className}`} onClick={onClick}>
+const Button = ({ children, className, onClick, ...props }) => (
+  <button type='button' className={`btn ${className}`} onClick={onClick} {...props}>
     {children}
   </button>
 )

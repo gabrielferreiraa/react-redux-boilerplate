@@ -6,12 +6,14 @@ import { reducer as toastrReducer } from 'react-redux-toastr'
 
 import sidebarReducer from './sidebar'
 import participantsReducer from './participants'
+import authReducer from './auth'
 
 const rootReducers = combineReducers({
   form: formReducer,
   toastr: toastrReducer,
   sidebar: sidebarReducer,
-  participants: participantsReducer
+  participants: participantsReducer,
+  auth: authReducer
 })
 
 export default rootReducers

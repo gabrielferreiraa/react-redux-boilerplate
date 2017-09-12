@@ -3,6 +3,9 @@
 import React, { Component } from 'react'
 import Particles from 'components/particles'
 import style from './css/login'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { login } from 'reducers/auth/action-creators'
 
 class Login extends Component {
   componentWillMount () {
@@ -36,7 +39,7 @@ class Login extends Component {
                       </div>
                       <div className='row'>
                         <div className='col-6'>
-                          <button type='button' className='btn btn-primary px-4' onClick={() => this.props.history.push('/dashboard')} >Login</button>
+                          <button type='button' className='btn btn-primary px-4' onClick={() => this.props.login()} >Login</button>
                         </div>
                         <div className='col-6 text-right'>
                           <button type='button' className='btn btn-link px-0'>Esqueceu a senha ?</button>
@@ -54,4 +57,7 @@ class Login extends Component {
   }
 }
 
-export default Login
+//const mapStateToProps = state => ({ isFetching: state.participants.isFetching })
+const mapDispatchToProps = dispatch => bindActionCreators({ login }, dispatch)
+export default connect(null, mapDispatchToProps)(Login)
+

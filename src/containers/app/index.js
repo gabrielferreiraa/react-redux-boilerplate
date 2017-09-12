@@ -31,20 +31,18 @@ class App extends Component {
     if (isLoading) return <LoaderFullPage messageLoading={globals.nameProject} />
 
     return (
-      <div>
-        <div className='app'>
-          <Header />
-          <div className='app-body'>
-            <Sidebar {...this.props} />
-            <main className='main'>
-              <Breadcrumb />
-              { this.props.children }
-            </main>
-            <Aside />
-          </div>
-          <Footer />
-          <Messages />
+      <div className='app'>
+        <Header />
+        <div className='app-body'>
+          <Sidebar {...this.props} />
+          <main className='main'>
+            <Breadcrumb />
+            { this.props.children }
+          </main>
+          <Aside />
         </div>
+        <Footer />
+        <Messages />
       </div>
     )
   }

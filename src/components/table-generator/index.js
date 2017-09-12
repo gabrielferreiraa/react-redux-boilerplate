@@ -4,6 +4,8 @@ import React, { Component } from 'react'
 import { Table } from 'reactstrap'
 import Icon from 'components/icon'
 import { Link } from 'react-router-dom'
+import { ButtonWarning, ButtonDanger } from 'components/button'
+
 import style from './css/table-generator'
 
 class TableGenerator extends Component {
@@ -17,22 +19,22 @@ class TableGenerator extends Component {
     const Edit = ({ router, id }) => (
       <Link
         to={`/${router}/editar/${id}`}>
-        <button type='button' title='Editar' className='btn btn-warning btn-sm'>
+        <ButtonWarning className='btn-sm' title='Editar'>
           <Icon className='fa fa-pencil' />
-        </button>
+        </ButtonWarning>
       </Link>
     )
 
     const Delete = () => (
-      <button type='button' title='Excluir' className='btn btn-danger btn-sm'>
-        <Icon className='fa fa-trash' />
-      </button>
+      <ButtonDanger className='btn-sm' title='Excluir'>
+        <Icon className='fa fa-trash'/>
+      </ButtonDanger>
     )
 
     const { indicators, data, router, ...props } = this.props
 
     return (
-      <div>
+      <div className='table-responsive'>
         <Table hover className={style.dataTable}>
           <thead>
             <tr>
