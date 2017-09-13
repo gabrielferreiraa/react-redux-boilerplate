@@ -40,7 +40,7 @@ export const login = (data, { ...history }) => {
       .then(resp => {
         dispatch(receiveLogin(resp))
         !!resp.data.data.token && setToken(resp.data.data.token)
-        history.push('/dashboard')
+        //history.push('/dashboard')
       })
       .catch(err => {
         dispatch(errorLogin(err))

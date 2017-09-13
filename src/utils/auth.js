@@ -6,7 +6,7 @@
  */
 export const setToken = token => {
   if (!window.localStorage) {
-    throw new Error('No storage support!');
+    throw new Error('No storage support!')
   }
 
   window.localStorage.setItem('token', token)

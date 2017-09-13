@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 import Loading from 'react-loading'
 import style from './css/loader'
+import { string } from 'prop-types'
 
 class Loader extends Component {
   componentWillMount () {
@@ -14,12 +15,25 @@ class Loader extends Component {
   }
 
   render () {
+    const { type, className, color } = this.props
+
     return (
-      <div className={style.loader}>
-        <Loading type='bars' color='#37474f' delay={0} height='44' width='44' />
+      <div className={className}>
+        <Loading type={type} color={color} delay={0} height='44' width='44' />
       </div>
     )
   }
+}
+
+Loader.propTypes = {
+  type: string,
+  className: string,
+  color: string
+}
+
+Loader.defaultProps = {
+  type: 'bars',
+  color: '#37474f'
 }
 
 export default Loader

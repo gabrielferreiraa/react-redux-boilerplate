@@ -27,7 +27,7 @@ class TableGenerator extends Component {
 
     const Delete = () => (
       <ButtonDanger className='btn-sm' title='Excluir'>
-        <Icon className='fa fa-trash'/>
+        <Icon className='fa fa-trash' />
       </ButtonDanger>
     )
 

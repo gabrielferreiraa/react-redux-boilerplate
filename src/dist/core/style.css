@@ -11,6 +11,18 @@ body {
     margin: 0;
 }
 
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #ddd;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #666;
+}
+
 /* Redux Toastr */
 .rrt-left-container .rrt-holder {
     display: flex;
