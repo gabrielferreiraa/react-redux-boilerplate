@@ -3,7 +3,7 @@
 import * as action from './actions'
 import { request } from 'utils/ws-client'
 import { URL_LOGIN } from 'src/constants'
-import { error as alertError } from 'components/messages'
+import { setToken, removeToken } from 'utils/auth'
 
 const requestLogin = data => ({
   type: action.REQUEST,
@@ -27,7 +27,6 @@ const errorLogin = message => ({
 })
 
 export const login = data => {
-
   let config = {
     method: 'POST',
     url: URL_LOGIN,
@@ -40,11 +39,15 @@ export const login = data => {
     return request(config)
       .then(resp => {
         dispatch(receiveLogin(resp))
-        return console.log(resp)
+        !!resp.data.data.token && setToken(resp.data.data.token)
       })
       .catch(err => {
-        dispatch(receiveLogin(err))
+        dispatch(errorLogin(err))
         return console.log(err)
       })
   }
 }
+
+export const logout = () => (
+  removeToken()
+)
