@@ -26,7 +26,7 @@ const errorLogin = message => ({
   message
 })
 
-export const login = data => {
+export const login = (data, { ...history }) => {
   let config = {
     method: 'POST',
     url: URL_LOGIN,
@@ -40,6 +40,7 @@ export const login = data => {
       .then(resp => {
         dispatch(receiveLogin(resp))
         !!resp.data.data.token && setToken(resp.data.data.token)
+        history.push('/dashboard')
       })
       .catch(err => {
         dispatch(errorLogin(err))

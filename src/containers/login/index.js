@@ -48,7 +48,7 @@ class Login extends Component {
                       </div>
                       <div className='row'>
                         <div className='col-6'>
-                          <button type='button' className='btn btn-primary px-4' onClick={() => this.props.login(this.state)} >Login</button>
+                          <button type='button' className='btn btn-primary px-4' onClick={() => this.props.login(this.state, this.props.history)} >Login</button>
                         </div>
                         <div className='col-6 text-right'>
                           <button type='button' className='btn btn-link px-0'>Esqueceu a senha ?</button>
