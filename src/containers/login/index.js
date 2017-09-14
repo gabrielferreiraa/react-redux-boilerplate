@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 import Particles from 'components/particles'
 import Loader from 'components/loader'
+import global from 'src/globals'
 
 import style from './css/login'
 import { bindActionCreators } from 'redux'
@@ -21,18 +22,16 @@ class Login extends Component {
     this._handleChange = this._handleChange.bind(this)
   }
 
-  componentWillMount () {
+  componentDidMount () {
     document.body.classList.add(style.backgroundCity)
   }
 
-  componentWillUnmount () {
+  componentDidUnmount () {
     document.body.classList.remove(style.backgroundCity)
   }
 
   _handleChange (e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
+    this.setState({ [e.target.name]: e.target.value })
   }
 
   render () {
@@ -70,7 +69,7 @@ class Login extends Component {
                   </div>
                 </div>
                 <div className={style.fetching}>
-                  {isFetching && <Loader type='balls' color='#20a8d8' />}
+                  {isFetching && <Loader type='balls' color={global.style.defaultColor} />}
                 </div>
               </div>
             </div>
