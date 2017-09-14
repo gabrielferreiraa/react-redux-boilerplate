@@ -5,6 +5,9 @@ const globals = {
   author: {
     name: '@gabrielferreiraa',
     network: 'https://github.com/gabrielferreiraa'
+  },
+  style: {
+    defaultColor: '#20A8D8'
   }
 }
 
