@@ -6,23 +6,33 @@ import * as action from './actions'
 export const initialState = { isFetching: false, isAuthenticated: false, token: '' }
 
 const handlers = {
-  [action.REQUEST]: (state, action) => ({
+  [action.LOGIN_REQUEST]: (state, action) => ({
     ...state,
     isFetching: true,
     isAuthenticated: false,
     user: action.data
   }),
-  [action.SUCCESS]: (state, action) => ({
+  [action.LOGIN_SUCCESS]: (state, action) => ({
     ...state,
     isFetching: false,
     isAuthenticated: true,
     errorMessage: ''
   }),
-  [action.ERROR]: (state, action) => ({
+  [action.LOGIN_ERROR]: (state, action) => ({
     ...state,
     isFetching: false,
     isAuthenticated: false,
     errorMessage: action.message
+  }),
+  [action.LOGOUT_REQUEST]: (state, action) => ({
+    ...state,
+    isFetching: true,
+    isAuthenticated: true
+  }),
+  [action.LOGOUT_SUCCESS]: (state, action) => ({
+    ...state,
+    isFetching: false,
+    isAuthenticated: false
   })
 }
 

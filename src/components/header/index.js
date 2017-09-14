@@ -130,7 +130,7 @@ class Header extends Component {
             </a>
           </li>
           <li className='nav-item d-md-down-none'>
-            <button type='button' className='nav-link' onClick={() => this.props.logout(this.props.history)}>
+            <button type='button' className='nav-link' onClick={() => this.props.logout(this.props)}>
               <i className='fa fa-sign-out' />
             </button>
           </li>

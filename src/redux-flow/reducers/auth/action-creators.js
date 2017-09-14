@@ -14,28 +14,20 @@ const requestLogin = data => ({
 
 const receiveLogin = user => ({
   type: action.LOGIN_SUCCESS,
-  isFetching: false,
-  isAuthenticated: true,
   token: user.token
 })
 
 const errorLogin = message => ({
   type: action.LOGIN_ERROR,
-  isFetching: false,
-  isAuthenticated: false,
   message
 })
 
 const requestLogout = () => ({
-  type: action.LOGOUT_REQUEST,
-  isFetching: true,
-  isAuthenticated: true
+  type: action.LOGOUT_REQUEST
 })
 
 const receiveLogout = () => ({
-  type: action.LOGOUT_SUCCESS,
-  isFetching: false,
-  isAuthenticated: false
+  type: action.LOGOUT_SUCCESS
 })
 
 export const login = (data, { ...history }) => {
