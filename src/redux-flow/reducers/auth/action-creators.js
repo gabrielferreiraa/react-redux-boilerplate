@@ -6,24 +6,36 @@ import { URL_LOGIN } from 'src/constants'
 import { setToken, removeToken } from 'utils/auth'
 
 const requestLogin = data => ({
-  type: action.REQUEST,
+  type: action.LOGIN_REQUEST,
   isFetching: true,
   isAuthenticated: false,
   data
 })
 
 const receiveLogin = user => ({
-  type: action.SUCCESS,
+  type: action.LOGIN_SUCCESS,
   isFetching: false,
   isAuthenticated: true,
   token: user.token
 })
 
 const errorLogin = message => ({
-  type: action.ERROR,
+  type: action.LOGIN_ERROR,
   isFetching: false,
   isAuthenticated: false,
   message
+})
+
+const requestLogout = () => ({
+  type: action.LOGOUT_REQUEST,
+  isFetching: true,
+  isAuthenticated: true
+})
+
+const receiveLogout = () => ({
+  type: action.LOGOUT_SUCCESS,
+  isFetching: false,
+  isAuthenticated: false
 })
 
 export const login = (data, { ...history }) => {
@@ -49,6 +61,11 @@ export const login = (data, { ...history }) => {
   }
 }
 
-export const logout = () => (
-  removeToken()
-)
+export const logout = ({ history }) => {
+  return dispatch => {
+    dispatch(requestLogout())
+    removeToken()
+    history.push('/login')
+    dispatch(receiveLogout())
+  }
+}

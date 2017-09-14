@@ -7,6 +7,7 @@ import { Dropdown, DropdownMenu, DropdownItem } from 'reactstrap'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { toggle } from 'reducers/sidebar/action-creators'
+import { logout } from 'reducers/auth/action-creators'
 
 class Header extends Component {
   constructor (props) {
@@ -129,7 +130,7 @@ class Header extends Component {
             </a>
           </li>
           <li className='nav-item d-md-down-none'>
-            <button type='button' className='nav-link'>
+            <button type='button' className='nav-link' onClick={() => this.props.logout(this.props.history)}>
               <i className='fa fa-sign-out' />
             </button>
           </li>
@@ -176,5 +177,5 @@ class Header extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({ toggle }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ toggle, logout }, dispatch)
 export default connect(null, mapDispatchToProps)(withRouter(Header))

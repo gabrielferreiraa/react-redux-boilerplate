@@ -2,6 +2,8 @@
 
 const reducer = 'auth'
 
-export const REQUEST = `${reducer}/REQUEST`
-export const SUCCESS = `${reducer}/SUCCESS`
-export const ERROR = `${reducer}/ERROR`
+export const LOGIN_REQUEST = `${reducer}/LOGIN_REQUEST`
+export const LOGIN_SUCCESS = `${reducer}/LOGIN_SUCCESS`
+export const LOGIN_ERROR = `${reducer}/LOGIN_ERROR`
+export const LOGOUT_REQUEST = `${reducer}/LOGOUT_REQUEST`
+export const LOGOUT_SUCCESSS = `${reducer}/LOGOUT_SUCCESS`
