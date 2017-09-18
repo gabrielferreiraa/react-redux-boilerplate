@@ -8,6 +8,11 @@ import Footer from 'components/footer'
 import Breadcrumb from 'components/breadcrumb'
 import Messages from 'components/redux-toastr'
 import LoaderFullPage from 'components/loader-full-page'
+import Network from 'react-network'
+
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { online, offline } from 'reducers/app/action-creators'
 
 import globals from 'src/globals'
 import 'dist/core/style'
@@ -19,10 +24,20 @@ class App extends Component {
     this.state = {
       isLoading: true
     }
+
+    this._handleNetwork = this._handleNetwork.bind(this)
   }
 
   componentDidMount () {
     setTimeout(() => this.setState({ isLoading: false }), 1500)
+  }
+
+  _handleNetwork (online) {
+    if (online) {
+      return this.props.online()
+    }
+
+    return this.props.offline()
   }
 
   render () {
@@ -38,6 +53,7 @@ class App extends Component {
           <main className='main'>
             <Breadcrumb />
             { this.props.children }
+            <Network onChange={({ online }) => this._handleNetwork(online)} />
           </main>
           <Aside />
         </div>
@@ -48,4 +64,6 @@ class App extends Component {
   }
 }
 
-export default App
+//const mapStateToProps = state => ({ isOnline: state.participants.isFetching })
+const mapDispatchToProps = dispatch => bindActionCreators({ online, offline }, dispatch)
+export default connect(null, mapDispatchToProps)(App)

@@ -103,6 +103,9 @@ class Header extends Component {
         </ul>
         <ul className='nav navbar-nav ml-auto'>
           <li className='nav-item d-md-down-none'>
+            {!this.props.isOnline && <small><b>Você está OFFLINE</b></small>}
+          </li>
+          <li className='nav-item d-md-down-none'>
             <button onClick={this.toggleAlert} className='nav-link' data-toggle='dropdown' type='button' aria-haspopup='true' aria-expanded={this.state.alertsOpen}>
               <i className='fa fa-bell-o' />
               <span className='badge badge-pill badge-danger'>5</span>
@@ -177,5 +180,6 @@ class Header extends Component {
   }
 }
 
+const mapStateToProps = state => ({ isOnline: state.app.isOnline })
 const mapDispatchToProps = dispatch => bindActionCreators({ toggle, logout }, dispatch)
-export default connect(null, mapDispatchToProps)(withRouter(Header))
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Header))
