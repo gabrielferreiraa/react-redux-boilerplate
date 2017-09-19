@@ -18,7 +18,9 @@ describe('auth reducer', () => {
       }
     }
 
-    expect(reducer([], dispatcher)).to.be.deep.equal({
+    const response = reducer([], dispatcher)
+
+    expect(response).to.be.deep.equal({
       isFetching: true,
       isAuthenticated: false,
       user: dispatcher
