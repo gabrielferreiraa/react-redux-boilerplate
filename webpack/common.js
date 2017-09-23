@@ -18,7 +18,8 @@ module.exports = {
   paths,
 
   entry: {
-    main: join(paths.src, 'index')
+    main: join(paths.src, 'index'),
+    vendor: ['react', 'react-dom', 'react-router-dom']
   },
 
   output: {
@@ -27,8 +28,17 @@ module.exports = {
   },
 
   uglifyJsPluginConfig: {
+    output: {
+      comments: false
+    },
     compress: {
-      warnings: false
+      conditionals: true, 
+      warnings: false,
+      dead_code: true,
+      unused: true,
+      evoluate: true,
+      if_return: true,
+      join_vars: true
     }
   },
 
