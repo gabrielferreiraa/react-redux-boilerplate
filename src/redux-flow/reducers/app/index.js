@@ -13,7 +13,7 @@ const handlers = {
   [action.OFFLINE]: (state, action) => ({
     ...state,
     isOnline: action.payload
-  }),
+  })
 }
 
 export default handleActions(handlers, initialState)

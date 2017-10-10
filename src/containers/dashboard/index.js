@@ -2,6 +2,8 @@
 
 import React from 'react'
 import Icon from 'components/icon'
+import Cropper from 'react-cropper'
+import 'cropperjs/dist/cropper.min'
 
 const Dashboard = () => (
   <h1>

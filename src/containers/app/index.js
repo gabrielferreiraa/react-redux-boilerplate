@@ -64,6 +64,6 @@ class App extends Component {
   }
 }
 
-//const mapStateToProps = state => ({ isOnline: state.participants.isFetching })
+// const mapStateToProps = state => ({ isOnline: state.participants.isFetching })
 const mapDispatchToProps = dispatch => bindActionCreators({ online, offline }, dispatch)
 export default connect(null, mapDispatchToProps)(App)

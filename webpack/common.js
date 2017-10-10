@@ -32,7 +32,7 @@ module.exports = {
       comments: false
     },
     compress: {
-      conditionals: true, 
+      conditionals: true,
       warnings: false,
       dead_code: true,
       unused: true,
