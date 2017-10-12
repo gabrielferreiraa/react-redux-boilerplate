@@ -1,0 +1,31 @@
+@import '~css/default'
+
+.info
+    color $blue
+    position relative
+    display inherit
+    margin-left 5px
+    
+    .icon
+        cursor pointer
+
+        &:hover + .list
+            display block
+            transform translateX(0)
+
+    .list
+        position absolute
+        width 200px
+        height auto
+        background-color #F3F3F3
+        padding 10px
+        top -10px
+        left 30px
+        border 1px solid rgba(0, 0, 0, .2)
+        transform translateX(20px)
+        display none
+        transition all 200ms ease
+
+        li
+            margin-left 10px
+            margin-bottom 10px
