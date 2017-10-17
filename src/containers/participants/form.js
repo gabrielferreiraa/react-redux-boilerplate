@@ -3,10 +3,12 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import { reduxForm, Field } from 'redux-form'
-import validators from './validator'
+import validators from './validators'
 import Input from 'components/input'
 
-const Form = ({ handleSubmit }) => {
+const Form = ({ handleSubmit, ...props }) => {
+  const { valid } = props
+
   return (
     <Container>
       <form role='form' onSubmit={handleSubmit}>
@@ -27,7 +29,7 @@ const Form = ({ handleSubmit }) => {
             />
           </Col>
         </Row>
-        <button type='submit'>Enviar</button>
+        <button type='submit' disabled={!valid}>Enviar</button>
       </form>
     </Container>
   )
@@ -37,7 +39,7 @@ const ParticipantForm = props => {
   const { handleSubmit } = props
   const params = props.match.params || ''
 
-  return <Form handleSubmit={handleSubmit} />
+  return <Form handleSubmit={handleSubmit} {...props} />
 }
 
 export default reduxForm({ form: 'participantForm' })(ParticipantForm)
