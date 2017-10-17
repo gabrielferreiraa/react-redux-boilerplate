@@ -4,7 +4,7 @@ import React from 'react'
 import { string, func } from 'prop-types'
 
 const Button = ({ children, className, onClick, ...props }) => (
-  <button type='button' className={`btn ${className}`} onClick={onClick} {...props}>
+  <button type={props.type} className={`btn ${className}`} onClick={onClick} {...props}>
     {children}
   </button>
 )
@@ -15,7 +15,8 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-  className: 'btn-success'
+  className: 'btn-success',
+  type: 'button'
 }
 
 export { ButtonInfo } from './button-info'
