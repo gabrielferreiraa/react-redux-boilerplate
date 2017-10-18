@@ -5,12 +5,9 @@ import { Container, Row, Col } from 'reactstrap'
 import { reduxForm, Field } from 'redux-form'
 import validators from './validators'
 import Input from 'components/input'
-import { ButtonSuccess, ButtonWarning } from 'components/button'
-import Icon from 'components/icon'
+import FormFooter from 'components/form-footer'
 
 const Form = ({ handleSubmit, ...props }) => {
-  const { valid } = props
-
   return (
     <Container>
       <form role='form' onSubmit={handleSubmit}>
@@ -31,23 +28,7 @@ const Form = ({ handleSubmit, ...props }) => {
             />
           </Col>
         </Row>
-        <Row>
-          <Col md='12'>
-            <ButtonSuccess
-              type='submit'
-              disabled={!valid}
-        >
-              <Icon className='fa fa-check-circle-o' />{' '}
-        Salvar
-        </ButtonSuccess>
-            <ButtonWarning
-              onClick={() => props.history.push('/participantes')}
-        >
-              <Icon className='fa fa-arrow-circle-o-left' />{' '}
-          Voltar
-        </ButtonWarning>
-          </Col>
-        </Row>
+        <FormFooter {...props} />
       </form>
     </Container>
   )
